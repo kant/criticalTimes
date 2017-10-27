@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * plugins/themes/criticalTimes/locale/en_US/locale.xml
+  *
+  * Copyright (c) 2014-2017 Simon Fraser University Library
+  * Copyright (c) 2003-2017 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings
+  -->
+
+<locale name="en_US" full_name="U.S. English">
+	<message key="plugins.themes.criticalTimes.name">Critical Times</message>
+	<message key="plugins.themes.criticalTimes.description">A theme for Critical Times, a journal published by the International Consortium of Critical Theory Programs.</message>
+
+	<message key="plugins.themes.criticalTimes.nav.menu">Menu</message>
+</locale>

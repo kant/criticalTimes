@@ -1,0 +1,113 @@
+// Always-visible header components on small screens
+body {
+	padding-top: 40px; // make room for top bar
+}
+
+.siteHeader__topBar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	background: @bg;
+	border-bottom: 1px solid @border;
+}
+
+.siteHeader__logo {
+
+	a {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 150px;
+	}
+
+	img {
+		display: block;
+		height: 12px;
+		width: auto;
+		padding: 14px 1rem;
+	}
+}
+
+.siteHeader__navToggle {
+	position: absolute;
+	top: 50%;
+	left: 0.5rem;
+	transform: translateY(-50%);
+	padding: 0.5em;
+	min-width: 2.2rem;
+	background: transparent;
+	border: none;
+	font-size: 0.85rem;
+	font-weight: @bold;
+	text-transform: uppercase;
+	color: @text;
+	cursor: pointer;
+}
+
+.siteHeader__navToggleIcon {
+	position: absolute;
+	top: 50%;
+	left: 0.5rem;
+	transform: translateY(-50%);
+
+	> span {
+		display: block;
+		width: 1.2rem;
+		height: 3px;
+		margin: 3px 0;
+		background: @accent;
+	}
+}
+
+.siteHeader__navToggleLabel {
+	.-screenReader;
+}
+
+.siteHeader__searchLink {
+	position: absolute;
+	top: 50%;
+	right: 0.5rem;
+	transform: translateY(-50%);
+	padding: 0.5em;
+	color: @accent;
+}
+
+.siteHeader__search {
+	position: relative;
+	border-top: 1px solid @border;
+	padding: 1rem;
+
+	.fa {
+		position: absolute;
+		top: 50%;
+		left: 2rem;
+		transform: translateY(-50%);
+		color: @accent;
+	}
+
+	.siteHeader__searchInput {
+		background: transparent;
+		border: 1px solid @border;
+		border-radius: 1rem;
+		padding: 0.25rem 1rem 0.25rem 3rem;
+		min-width: 13rem;
+		font-family: @font;
+		line-height: 1.5rem;
+	}
+}
+
+.siteHeader__about {
+	padding: 1rem;
+	border-top: 1px solid @border;
+	font-size: 0.85rem;
+
+	> p:first-child {
+		margin-top: 0;
+	}
+
+	> p:last-child {
+		margin-bottom: 0;
+	}
+}

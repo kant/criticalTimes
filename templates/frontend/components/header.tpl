@@ -63,7 +63,7 @@
 			</div>
 			<div class="siteHeader__details">
 				<nav id="content-nav" class="navMenu" aria-label="{translate|escape key="common.navigation.site"}">
-					{load_menu name="primary"}
+					{load_menu name="primary" ulClass="navbar-nav" liClass="nav-item"}
 				</nav>
 				<form class="siteHeader__search" action="{url page="search" op="search"}" method="post" role="search">
 					{csrf}

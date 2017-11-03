@@ -1,0 +1,28 @@
+// Common two-column row
+@media (min-width: @break-md) {
+
+	.row {
+		.-clearFix;
+	}
+
+	.col--left {
+		float: left;
+		width: 43%;
+	}
+
+	.col--right {
+		float: right;
+		width: 57%;
+	}
+}
+
+@media (min-width: @break-xl) {
+
+	.col--left {
+		width: 500 - 32px;
+	}
+
+	.col--right {
+		width: (@break-xl - 500);
+	}
+}

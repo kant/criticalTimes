@@ -8,12 +8,19 @@ body {
 	color: @text;
 }
 
+a {
+	color: @accent;
+	font-weight: @bold;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: @accentLight;
+	}
+}
+
 .siteWrapper {
 	max-width: @break-xl;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.siteBody {
-	padding: 1rem 0;
 }

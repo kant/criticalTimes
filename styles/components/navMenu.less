@@ -21,7 +21,44 @@
 	.dropdown-item {
 		padding-left: 2rem;
 	}
+
+	.dropdown-toggle:after {
+	    content: '';
+	    display: inline-block;
+			position: relative;
+			left: 0.5em;
+			top: -3px;
+	    width: 6px;
+	    height: 6px;
+	    border-bottom: 1px solid @text;
+	    border-left: 1px solid @text;
+	    transform: rotate(-45deg);
+			transition: all 0.2s;
+	}
+
+	.dropdown-toggle[aria-expanded="true"]:after {
+		top: 1px;
+		transform: rotate(135deg);
+	}
+
+	.dropdown-menu {
+		display: none;
+
+		&.show {
+			display: block;
+		}
+	}
 }
+
+@media (max-width: (@break-md - 1)) {
+
+	.dropdown-menu {
+		/* Override popper.js settings */
+		position: relative !important;
+		transform: none !important;
+	}
+}
+
 
 @media (min-width: @break-md) {
 
@@ -38,9 +75,32 @@
 		}
 
 		.dropdown-menu {
-			position: absolute;
-			top: 100%;
-			left: -9999px;
+			background: @bg;
+			border: 1px solid @border-light;
+			border-radius: 0.25rem;
+			top: -0.25rem !important;
+			box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+		}
+
+		.dropdown-item {
+			padding: 0.5rem 0.75rem;
+			min-width: 10rem;
+			border-bottom: 1px solid @border-light;
+			font-size: 0.85rem;
+			font-weight: @normal;
+
+			&:first-child {
+				padding-top: 0.75rem;
+			}
+
+			&:last-child {
+				padding-bottom: 0.75rem;
+				border-bottom: none;
+			}
+
+			&:hover {
+				background: darken(@bg, 5%);
+			}
 		}
 	}
 }

@@ -11,5 +11,8 @@
 		</div><!-- .siteBody -->
 		<footer id="content-footer"></footer>
 	</div><!-- .siteWrapper -->
+
+	{load_script context="frontend"}
+	{call_hook name="Templates::Common::Footer::PageFooter"}
 </body>
 </html>

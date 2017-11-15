@@ -16,4 +16,6 @@
 	<message key="plugins.themes.criticalTimes.description">A theme for Critical Times, a journal published by the International Consortium of Critical Theory Programs.</message>
 
 	<message key="plugins.themes.criticalTimes.nav.menu">Menu</message>
+	<message key="plugins.themes.criticalTimes.browseArchives.title">Read the Archives</message>
+	<message key="plugins.themes.criticalTimes.browseArchives.description">Browse all of our published material by section.</message>
 </locale>

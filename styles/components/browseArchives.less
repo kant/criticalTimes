@@ -1,0 +1,143 @@
+// Row displaying section archive links
+.browseArchives {
+	margin-top: 1rem;
+	padding: 1rem;
+	border-top: 1px solid @border;
+}
+
+.browseArchives__title {
+	margin: 0;
+	font-size: 1.2rem;
+	line-height: 1.5em;
+}
+
+.browseArchives__description {
+	margin: 0 0 1rem;
+}
+
+.browseArchives__listItemText {
+	display: inline-block;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+@media (min-width: @break-md) {
+
+	.browseArchives {
+		margin-top: 0;
+		padding: 0;
+
+		.col--left,
+		.col--right {
+			position: relative;
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+
+		.col--right:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -1px;
+			border-right: 1px solid @border;
+		}
+	}
+
+	.browseArchives__title,
+	.browseArchives__description,
+	.browseArchives__list {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+
+	.browseArchives__title {
+		font-size: 1.2rem;
+		line-height: 1.5em;
+	}
+
+	.browseArchives__list {
+		margin-top: 1.3rem;
+		margin-bottom: 2rem;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+
+	.browseArchives__listItem {
+		float: left;
+		width: 50%;
+
+		&:nth-child(2n+1) {
+			clear: left;
+		}
+	}
+}
+
+@media (min-width: @break-lg) {
+
+	.browseArchives {
+
+		.col--left,
+		.col--right {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
+	}
+
+	.browseArchives__title,
+	.browseArchives__description,
+	.browseArchives__list {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.browseArchives__title {
+		font-size: 1.6rem;
+		line-height: 1.2em;
+	}
+
+	.browseArchives__list {
+		margin-top: 0.5rem;
+	}
+
+	.browseArchives__listItemText {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		font-size: 1.6rem;
+		font-weight: @normal;
+		line-height: 1.5em;
+	}
+}
+
+@media (min-width: @break-xl) {
+
+	.browseArchives {
+
+		.col--left,
+		.col--right {
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
+	}
+
+	.browseArchives__title,
+	.browseArchives__description,
+	.browseArchives__list {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+
+	.browseArchives__title {
+		font-size: 1.8rem;
+	}
+
+	.browseArchives__description {
+		margin-top: 1rem;
+		font-size: 1.1rem;
+		line-height: 1.2em;
+	}
+
+	.browseArchives__list {
+		margin-top: 0.6rem;
+	}
+}

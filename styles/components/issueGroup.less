@@ -1,0 +1,176 @@
+// Issue table of contents
+.issueGroup {
+
+	.col--left,
+	.col--right {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	.col--right:nth-child(2) {
+		margin-top: 2rem;
+	}
+}
+
+.issueGroup__current,
+.issueGroup__title,
+.issueGroup__identity,
+.issueGroup__description,
+.issueGroup__galleys {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.issueGroup__current {
+	font-size: 0.85rem;
+}
+
+.issueGroup__title {
+	font-size: 1.2rem;
+	font-weight: @bold;
+	line-height: 1.5em;
+}
+
+.issueGroup__identity {
+	margin-top: 1rem;
+}
+
+.issueGroup__description {
+	margin-top: 1rem;
+	line-height: 2em;
+}
+
+.issueGroup__galleys {
+	margin-top: 1rem;
+}
+
+.issueGroup .articleSummary {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+@media (min-width: @break-md) {
+
+	.issueGroup {
+
+		.col--left,
+		.col--right {
+			position: relative;
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+
+		.col--left:after,
+		.col--right:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			border-right: 1px solid @border;
+		}
+
+		.col--right:after {
+			right: auto;
+			left: -1px;
+		}
+
+		.col--right:nth-child(2) {
+			margin-top: 0;
+		}
+	}
+
+	.issueGroup__current,
+	.issueGroup__title,
+	.issueGroup__identity,
+	.issueGroup__description,
+	.issueGroup__galleys {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+
+	.issueGroup__description {
+		line-height: 1.6rem;
+	}
+
+	.issueGroup .articleSummary {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+}
+
+@media (min-width: @break-lg) {
+	.issueGroup {
+
+		.col--left,
+		.col--right {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
+	}
+
+	.issueGroup__current,
+	.issueGroup__title,
+	.issueGroup__identity,
+	.issueGroup__description,
+	.issueGroup__galleys {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.issueGroup__current {
+		font-size: 1rem;
+	}
+
+	.issueGroup__title {
+		font-size: 1.6rem;
+	}
+
+	.issueGroup__identity {
+		font-size: 1.2rem;
+		line-height: 1.5em;
+	}
+
+	.issueGroup__description,
+	.issueGroup__galleys {
+			margin-top: 2rem;
+	}
+
+	.issueGroup .articleSummary {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
+@media (min-width: @break-xl) {
+
+	.issueGroup {
+
+		.col--left:after {
+			right: -32px;
+		}
+	}
+
+	.issueGroup__current {
+		font-size: 1.2rem;
+	}
+
+	.issueGroup__title {
+		font-size: 1.8rem;
+	}
+
+	.issueGroup__identity {
+		font-size: 1.3rem;
+	}
+
+	.issueGroup__description,
+	.issueGroup__galleys {
+			font-size: 1.1rem;
+			line-height: 2rem;
+	}
+
+	.issueGroup .articleSummary {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+}

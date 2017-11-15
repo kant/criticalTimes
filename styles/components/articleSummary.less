@@ -1,0 +1,70 @@
+// Summary of an article
+.articleSummary {
+	margin-top: 2rem;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.articleSummary__section,
+.articleSummary__title,
+.articleSummary__authors {
+	color: @text;
+}
+
+.articleSummary__section {
+	font-size: 0.85rem;
+	font-weight: @normal;
+}
+
+.articleSummary__title {
+	font-weight: @bold;
+	line-height: 1.5em;
+}
+
+.articleSummary__authors {
+	font-weight: @normal;
+}
+
+@media (min-width: @break-lg) {
+
+	.articleSummary {
+		margin-top: 3rem;
+	}
+
+	.articleSummary__section {
+		font-size: 1rem;
+	}
+
+	.articleSummary__title {
+		font-size: 1.2rem;
+		font-weight: @bold;
+		line-height: 1.5em;
+	}
+
+	.articleSummary__authors {
+		font-size: 1.2rem;
+		font-weight: @normal;
+	}
+}
+
+@media (min-width: @break-xl) {
+
+	.articleSummary {
+		margin-top: 4rem;
+	}
+
+	.articleSummary__title {
+		font-size: 1.3rem;
+	}
+
+	.articleSummary__authors {
+		font-size: 1.2rem;
+		font-weight: @normal;
+	}
+}

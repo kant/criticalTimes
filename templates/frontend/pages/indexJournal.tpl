@@ -34,7 +34,7 @@
 
 <div class="row issueGroup">
 	<div class="col--left">
-		<div class="issueGroup__current">Current Issue</div>
+		<div class="issueGroup__section">Current Issue</div>
 		<div class="issueGroup__title">Inaugural Edition</div>
 		<div class="issueGroup__identity">1:1 November 2017</div>
 		<div class="issueGroup__description">
@@ -64,12 +64,27 @@
 				<div class="articleSummary__authors">Sandro Mezzadra</div>
 			</a>
 		</div>
+		<div class="articleSummary">
+			<a href="#">
+				<div class="articleSummary__section">Essays</div>
+				<div class="articleSummary__title">On the Critical Task of the University Today</div>
+				<div class="articleSummary__authors">Sandro Mezzadra</div>
+			</a>
+		</div>
+		<div class="articleSummary">
+			<a href="#">
+				<div class="articleSummary__section">Essays</div>
+				<div class="articleSummary__title">On the Critical Task of the University Today</div>
+				<div class="articleSummary__authors">Sandro Mezzadra</div>
+			</a>
+		</div>
 	</div>
 </div>
 
 <div class="row issueGroup issueGroup--special">
 	<div class="col--left">
-		<div class="issueGroup__title">Special Section</div>
+		<div class="issueGroup__section">Special Section</div>
+		<div class="issueGroup__title">On the Critical Task of the University Today</div>
 		<div class="issueGroup__description">
 			<p>
 				Quisque dictum tincidunt mi vitae consectetur. Donec sit amet fringilla dolor, id blandit massa. Cras sed pretium lectus. Sed pharetra eget orci vitae pharetra.
@@ -95,6 +110,21 @@
 					<div class="articleSummary__authors">Sandro Mezzadra</div>
 				</a>
 			</div>
+			<div class="articleSummary articleSummary--hasArt">
+				<a href="#">
+					<div class="articleSummary__section">Essays</div>
+					<img src="#" class="articleSummary__art" width="300" height="200">
+					<div class="articleSummary__title">On the Critical Task of the University Today</div>
+					<div class="articleSummary__authors">Sandro Mezzadra</div>
+				</a>
+			</div>
+			<div class="articleSummary">
+				<a href="#">
+					<div class="articleSummary__section">Essays</div>
+					<div class="articleSummary__title">On the Critical Task of the University Today</div>
+					<div class="articleSummary__authors">Sandro Mezzadra</div>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
@@ -105,6 +135,21 @@
 			<div class="articleSummary">
 				<a href="#">
 					<div class="articleSummary__section">Essays</div>
+					<div class="articleSummary__title">On the Critical Task of the University Today</div>
+					<div class="articleSummary__authors">Sandro Mezzadra</div>
+				</a>
+			</div>
+			<div class="articleSummary">
+				<a href="#">
+					<div class="articleSummary__section">Essays</div>
+					<div class="articleSummary__title">On the Critical Task of the University Today</div>
+					<div class="articleSummary__authors">Sandro Mezzadra</div>
+				</a>
+			</div>
+			<div class="articleSummary articleSummary--hasArt">
+				<a href="#">
+					<div class="articleSummary__section">Essays</div>
+					<img src="#" class="articleSummary__art" width="300" height="200">
 					<div class="articleSummary__title">On the Critical Task of the University Today</div>
 					<div class="articleSummary__authors">Sandro Mezzadra</div>
 				</a>

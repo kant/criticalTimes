@@ -113,7 +113,7 @@
 			<div class="articleSummary articleSummary--hasArt">
 				<a href="#">
 					<div class="articleSummary__section">Essays</div>
-					<img src="#" class="articleSummary__art" width="300" height="200">
+					<img src="https://images.unsplash.com/photo-1474770447574-779d47496484?auto=format&fit=crop&w=1950&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" class="articleSummary__art" width="300" height="200">
 					<div class="articleSummary__title">On the Critical Task of the University Today</div>
 					<div class="articleSummary__authors">Sandro Mezzadra</div>
 				</a>
@@ -149,7 +149,7 @@
 			<div class="articleSummary articleSummary--hasArt">
 				<a href="#">
 					<div class="articleSummary__section">Essays</div>
-					<img src="#" class="articleSummary__art" width="300" height="200">
+					<img src="https://images.unsplash.com/photo-1474770447574-779d47496484?auto=format&fit=crop&w=1950&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" class="articleSummary__art" width="300" height="200">
 					<div class="articleSummary__title">On the Critical Task of the University Today</div>
 					<div class="articleSummary__authors">Sandro Mezzadra</div>
 				</a>

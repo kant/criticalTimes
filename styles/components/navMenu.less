@@ -72,6 +72,11 @@
 
 		.nav-link {
 			padding: 1rem 1.5rem;
+
+			&:focus {
+				background: @light;
+				outline: 0;
+			}
 		}
 
 		.dropdown-menu {
@@ -80,6 +85,7 @@
 			border-radius: 0.25rem;
 			top: -0.25rem !important;
 			box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+			z-index: 999;
 		}
 
 		.dropdown-item {
@@ -98,8 +104,10 @@
 				border-bottom: none;
 			}
 
-			&:hover {
-				background: darken(@bg, 5%);
+			&:hover,
+			&:focus {
+				background: @light;
+				outline: 0;
 			}
 		}
 	}

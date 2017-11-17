@@ -43,7 +43,7 @@
 				{url|assign:"homeUrl" page="index" router=$smarty.const.ROUTE_PAGE}
 				<div class="siteHeader__logo">
 					<a href="{$homeUrl}">
-						<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{else}alt="{translate key="common.pageHeaderLogo.altText"}"{/if} />
+						<img src="{$ctThemePath|concat:"/img/logo.png"}" alt="{translate|escape key="plugins.themes.criticalTimes.logoAltText"}">
 					</a>
 				</div>
 				<button class="siteHeader__navToggle">

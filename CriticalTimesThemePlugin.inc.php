@@ -44,13 +44,15 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		$this->addScript('criticalTimes', 'js/main.js');
 
 		$this->addMenuArea(array('primary', 'footer1', 'footer2'));
+
+		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 	}
 
 	/**
 	 * Get the display name of this plugin
 	 * @return string
 	 */
-	function getDisplayName() {
+	public function getDisplayName() {
 		return __('plugins.themes.criticalTimes.name');
 	}
 
@@ -58,8 +60,28 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 	 * Get the description of this plugin
 	 * @return string
 	 */
-	function getDescription() {
+	public function getDescription() {
 		return __('plugins.themes.criticalTimes.description');
+	}
+
+	/**
+	 * Load custom data for templates
+	 *
+	 * @param string $hookName
+	 * @param array $args [
+	 *		@option TemplateManager
+	 *		@option string Template file requested
+	 *		@option string
+	 *		@option string
+	 *		@option string output HTML
+	 * ]
+	 */
+	public function loadTemplateData($hookName, $args) {
+		$request = Application::getRequest();
+		$templateMgr = $args[0];
+		$template = $args[1];
+
+		$templateMgr->assign('ctThemePath', $request->getBaseUrl() . '/' . $this->getPluginPath());
 	}
 }
 

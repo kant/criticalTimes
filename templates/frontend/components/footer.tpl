@@ -9,36 +9,28 @@
  *}
 		</div><!-- .siteBody -->
 		<footer id="content-footer">
-			<div class="row browseArchives">
-				<div class="col--left">
-					<h2 class="browseArchives__title">
-						{translate key="plugins.themes.criticalTimes.browseArchives.title"}
-					</h2>
-					<p class="browseArchives__description">
-						{translate key="plugins.themes.criticalTimes.browseArchives.description"}
-					</p>
-				</div>
-				<div class="col--right">
-					<div class="browseArchives__list -clearFix">
-						<div class="browseArchives__listItem">
-							<a href="#" class="browseArchives__listItemText">Essays</a>
-						</div>
-						<div class="browseArchives__listItem">
-							<a href="#" class="browseArchives__listItemText">Lectures</a>
-						</div>
-						<div class="browseArchives__listItem">
-							<a href="#" class="browseArchives__listItemText">Interviews</a>
-						</div>
-						<div class="browseArchives__listItem">
-							<a href="#" class="browseArchives__listItemText">Artistic Interventions</a>
-						</div>
-						<div class="browseArchives__listItem">
-							<a href="#" class="browseArchives__listItemText">Reprints</a>
-						</div>
-						<div class="browseArchives__listItem">
-							<a href="#" class="browseArchives__listItemText">Dispatches</a>
+			{include file="frontend/components/browseArchives.tpl"}
+			<div class="siteFooter">
+				<div class="siteFooter__main -clearFix">
+					<div class="siteFooter__contactColumn">
+						<a class="siteFooter__siteLogo" href="{$homeUrl}">
+							<img src="{$ctThemePath|concat:"/img/logo-white.png"}" alt="{translate|escape key="plugins.themes.criticalTimes.logoAltText"}">
+						</a>
+						<div class="siteFooter__address">
+							{translate key="plugins.themes.criticalTimes.footer.address"}
 						</div>
 					</div>
+					<div class="siteFooter__sitemapColumn">
+						{load_menu name="footer" ulClass="siteFooter__siteMap" liClass="siteFooter__siteMapItem"}
+					</div>
+					<div class="siteFooter__platformColumn">
+						<a class="siteFooter__platformLink" href="{url page="about" op="aboutThisPublishingSystem"}">
+							<img alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/templates/images/ojs_brand_white.png">
+						</a>
+					</div>
+				</div>
+				<div class="siteFooter__support">
+					{translate key="plugins.themes.criticalTimes.footer.support"}
 				</div>
 			</div>
 		</footer>

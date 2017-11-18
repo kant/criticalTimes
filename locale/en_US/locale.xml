@@ -19,4 +19,6 @@
 	<message key="plugins.themes.criticalTimes.nav.menu">Menu</message>
 	<message key="plugins.themes.criticalTimes.browseArchives.title">Read the Archives</message>
 	<message key="plugins.themes.criticalTimes.browseArchives.description">Browse all of our published material by section.</message>
+	<message key="plugins.themes.criticalTimes.footer.address"><![CDATA[Stephens Hall<br>University of California, Berkley<br>Berkley, CA 94720-23340]]></message>
+	<message key="plugins.themes.criticalTimes.footer.support">Supported by a grant to the University of California, Berkley from the Andrew W. Mellon Foundation.</message>
 </locale>

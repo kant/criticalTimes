@@ -1,0 +1,168 @@
+// General site footer
+.siteFooter__main {
+	padding: 2rem 1rem;
+	background: @dark;
+	color: #fff;
+}
+
+.siteFooter__siteLogo {
+	display: block;
+	width: 200px;
+	max-width: 100%;
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.siteFooter__address,
+.siteFooter__sitemapColumn,
+.siteFooter__support {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.siteFooter__siteMap {
+	margin: 0;
+	padding: 0;
+
+	.nav-link,
+	.dropdown-item {
+		display: block;
+		padding: 0.125rem 0;
+		color: #fff
+	}
+
+	.dropdown-item {
+		font-weight: @normal;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+.siteFooter__siteMapItem {
+	padding: 0;
+	list-style: none;
+}
+
+.siteFooter__siteMapItem + .siteFooter__siteMapItem {
+	margin-top: 1rem;
+}
+
+.siteFooter__platformColumn {
+	margin-top: 4rem;
+	margin-bottom: 0;
+}
+
+.siteFooter__platformLink {
+	display: block;
+	width: 100px;
+	max-width: 100%;
+	margin-left: auto;
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.siteFooter__support {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+@media (min-width: @break-md) {
+
+	.siteFooter__main {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+
+	.siteFooter__contactColumn {
+		float: left;
+		width: 43%;
+	}
+
+	.siteFooter__sitemapColumn {
+		float: right;
+		width: 57%;
+	}
+
+	.siteFooter__siteMap {
+		.-clearFix();
+		margin-top: 1.2rem;
+		padding-left: 1.5rem;
+	}
+
+	.siteFooter__siteMapItem {
+		float: left;
+		width: 50%;
+	}
+
+	.siteFooter__siteMapItem + .siteFooter__siteMapItem {
+		margin-top: 0;
+	}
+
+	.siteFooter__support {
+		text-align: center;
+		font-size: 0.85rem;
+	}
+}
+
+@media (min-width: @break-lg) {
+
+	.siteFooter__main {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.siteFooter__siteMap {
+		padding-left: 2rem;
+	}
+
+	.siteFooter__siteMapItem .nav-link {
+		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+		line-height: 1.2em;
+	}
+}
+
+@media (min-width: @break-xl) {
+
+	.siteFooter__main {
+		position: relative;
+		padding: 3rem 0;
+	}
+
+	.siteFooter__siteMap {
+		padding-left: 3rem;
+	}
+
+	.siteFooter__contactColumn {
+		float: left;
+		width: 500px;
+	}
+
+	.siteFooter__siteLogo,
+	.siteFooter__address {
+		padding-left: 3rem;
+	}
+
+	.siteFooter__sitemapColumn {
+		float: left;
+		width: 40%;
+		margin-bottom: 0;
+	}
+
+	.siteFooter__platformColumn {
+		position: absolute;
+		bottom: 3rem;
+		right: 3rem;
+	}
+}

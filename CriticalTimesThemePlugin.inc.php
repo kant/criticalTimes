@@ -43,7 +43,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		$this->addScript('bsDropdown', 'js/lib/bootstrap/dropdown.js');
 		$this->addScript('criticalTimes', 'js/main.js');
 
-		$this->addMenuArea(array('primary', 'footer1', 'footer2'));
+		$this->addMenuArea(array('primary', 'footer'));
 
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 	}

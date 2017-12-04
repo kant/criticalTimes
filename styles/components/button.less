@@ -1,8 +1,9 @@
 // Buttons
 .button {
+	display: inline-block;
 	background: transparent;
 	border: 1px solid @accent;
-	border-radius: 1rem;
+	border-radius: @radius;
 	padding: 0.25rem 1rem;
 	color: @accent;
 	font-family: @font;
@@ -15,4 +16,9 @@
 		border-color: @accentLight;
 		color: #fff;
 	}
+}
+
+.button--primary {
+	background: @accent;
+	color: #fff;
 }

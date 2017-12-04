@@ -93,7 +93,7 @@ body {
 	border: 1px solid @border;
 	border-radius: 1rem;
 	padding: 0.25rem 1rem 0.25rem 3rem;
-	width: 13rem;
+	width: 17rem;
 	font-family: @font;
 	line-height: 1.5rem;
 }
@@ -158,13 +158,19 @@ body {
 	}
 
 	.siteHeader__searchInput {
-		width: 9rem;
+		width: 13rem;
 		padding-left: 2.5rem;
 	}
 
 	.siteHeader__about {
+		border-bottom: 1px solid @border;
 		padding: 1rem 1.5rem;
 		line-height: 1.2em;
+	}
+
+	// Don't show bottom border on homepage, where spotlight is
+	.body__page--index .siteHeader__about {
+		border-bottom: none;
 	}
 }
 

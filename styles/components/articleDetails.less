@@ -1,0 +1,279 @@
+// Detailed view of an article
+.articleFull__header {
+	padding: 2rem 1rem;
+}
+
+.articleFull__main,
+.articleFull__details {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.articleFull__section a {
+	font-size: 0.85rem;
+	font-weight: @normal;
+	color: @text;
+
+	&:hover,
+	&:focus {
+		color: @text;
+		text-decoration: underline;
+	}
+}
+
+.articleFull__title {
+	margin: 0.25rem 0 0;
+	font-size: 1.2rem;
+	line-height: 1.5em;
+}
+
+.articleFull__subtitle {
+	margin-top: 1rem;
+	font-size: 1rem;
+	line-height: 1.3em;
+	display: block;
+}
+
+.articleFull__authors {
+	margin-top: 1rem;
+}
+
+.articleFull__item {
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+.articleFull .item .label, // Items added by hook
+.articleFull__itemLabel {
+	margin: 0;
+	font-size: 1rem;
+	line-height: 1.5em;
+}
+
+.articleFull__itemContent {
+	margin-top: 0.25rem;
+
+	p {
+		line-height: 2em;
+	}
+
+	p:first-child {
+		margin-top: 0;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.articleFull__issue,
+.articleFull__doi {
+	font-weight: @normal;
+	color: @text;
+	line-height: 1.5em;
+
+	&:hover,
+	&:focus {
+		color: @text;
+		text-decoration: underline;
+	}
+}
+
+.articleFull__item--galleys .button {
+	margin-right: 0.25em;
+	margin-bottom: 0.5em;
+}
+
+// Prevent duplicate galley links right after each other
+.articleFull__main .articleFull__item--galleys {
+	display: none;
+}
+
+@media (min-width: @break-md) {
+
+	.articleFull__header,
+	.articleFull__main,
+	.articleFull__details {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+
+	.articleFull__section a {
+		font-size: 1rem;
+		line-height: 1.5em;
+	}
+
+	.articleFull__title {
+		margin-top: 0.5rem;
+		font-size: 2rem;
+		line-height: 1.2em;
+	}
+
+	.articleFull__subtitle {
+		font-size: 1.4rem;
+		line-height: 1.2em;
+	}
+
+	.articleFull__authors {
+		font-size: 1.2rem;
+		line-height: 1.5em;
+	}
+
+	.articleFull .item .label, // Items added by hook
+	.articleFull__itemLabel {
+		font-size: 1.2rem;
+		line-height: 1.5em;
+	}
+
+	.articleFull__item {
+		margin-top: 3rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.articleFull__itemContent {
+		font-size: 1.1rem;
+		line-height: 1.4em;
+	}
+}
+
+@media (min-width: @break-lg) {
+
+	.articleFull__header,
+	.articleFull__main,
+	.articleFull__details {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.articleFull__section a {
+		font-size: 1.1rem;
+		line-height: 1.5em;
+	}
+
+	.articleFull__title {
+		font-size: 2.2rem;
+		line-height: 1.2em;
+	}
+
+	.articleFull__subtitle {
+		font-size: 1.5rem;
+		line-height: 1.2em;
+	}
+
+	.articleFull__authors {
+		margin-top: 2rem;
+		font-size: 1.4rem;
+		line-height: 1.5em;
+	}
+
+	.articleFull .item .label, // Items added by hook
+	.articleFull__itemLabel {
+		font-size: 1.4rem;
+		line-height: 1.5em;
+	}
+
+	.articleFull__item {
+		margin-top: 4rem;
+		margin-bottom: 2rem;
+	}
+
+	.articleFull__itemContent {
+		font-size: 1.2rem;
+		line-height: 1.4em;
+	}
+
+	.articleFull__item--abstract {
+		max-width: 50em;
+		line-height: 1.2em;
+	}
+}
+
+@media (min-width: @break-xl) {
+
+	.articleFull__header,
+	.articleFull__main,
+	.articleFull__details {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+
+	.articleFull__header {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+		border-bottom: 1px solid @border;
+	}
+
+	.articleFull__title {
+		font-size: 2.5rem;
+		line-height: 1.2em;
+	}
+
+	.articleFull__subtitle {
+		font-size: 1.6rem;
+		line-height: 1.2em;
+	}
+
+	.articleFull__authors {
+		font-size: 1.6rem;
+		line-height: 1.5em;
+	}
+
+	.articleFull__main {
+		position: relative;
+		float: right;
+		width: 700px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -1px;
+			bottom: 0;
+			width: 1px;
+			background: @border;
+		}
+	}
+
+	.articleFull__details {
+		position: relative;
+		float: left;
+		width: 500px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 1px;
+			background: @border;
+		}
+
+		.articleFull .item .label, // Items added by hook
+		.articleFull__itemLabel {
+			font-size: 1.2rem;
+			line-height: 1.5em;
+		}
+	}
+
+	.articleFull__item {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
+
+	.articleFull__item--abstract {
+
+		p {
+			line-height: 1.65em;
+		}
+
+		.articleFull__itemLabel {
+			.-screenReader;
+		}
+	}
+
+	// Show galley links below abstract
+	.articleFull__main .articleFull__item--galleys {
+		display: block;
+	}
+}

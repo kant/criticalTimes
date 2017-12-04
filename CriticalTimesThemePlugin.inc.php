@@ -82,6 +82,37 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		$template = $args[1];
 
 		$templateMgr->assign('ctThemePath', $request->getBaseUrl() . '/' . $this->getPluginPath());
+
+		if ($template === 'frontend/pages/article.tpl') {
+			$this->loadArticleTemplateData($hookName, $args);
+		}
+	}
+
+	/**
+	 * Load custom data for article templates
+	 *
+	 * @see CriticalTimesThemePlugin::loadTemplateData()
+	 */
+	public function loadArticleTemplateData($hookName, $args) {
+		$request = Application::getRequest();
+		$context = $request->getContext();
+		$contextId = $context ? $context->getId() : CONTEXT_ID_NONE;
+		$dispatcher = $request->getDispatcher();
+		$templateMgr = $args[0];
+		$article = $templateMgr->get_template_vars('article');
+
+		$authorString = join(', ', array_map(function($author) {
+			return $author->getFullName();
+		}, $article->getAuthors()));
+
+		$section = $templateMgr->get_template_vars('section');
+		$sectionDao = DAORegistry::getDAO('SectionDAO');
+		$section = $sectionDao->getById($section->getId(), $contextId);
+
+		$templateMgr->assign(array(
+			'authorString' => $authorString,
+			'sectionPath' => $section->getData('browseByPath'),
+		));
 	}
 }
 

@@ -25,4 +25,13 @@
 	<!-- Article details -->
 	<message key="plugins.themes.criticalTimes.article.galleys">View</message>
 	<message key="plugins.themes.criticalTimes.article.galleys.supplementary">Supplementary Files</message>
+
+	<!-- TOC Configuration -->
+	<message key="plugins.themes.criticalTimes.toc.group">Group {$number}</message>
+	<message key="plugins.themes.criticalTimes.toc.group.name">Name</message>
+	<message key="plugins.themes.criticalTimes.toc.group.description">Description</message>
+	<message key="plugins.themes.criticalTimes.toc.group.special">Should articles in this group be identified as a special section?</message>
+	<message key="plugins.themes.criticalTimes.toc.group.items">Article IDs</message>
+	<message key="plugins.themes.criticalTimes.toc.group.items.description">Article IDs should be separated by a comma, eg - 12,35,67,43</message>
+
 </locale>

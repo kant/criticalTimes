@@ -45,7 +45,13 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 
 		$this->addMenuArea(array('primary', 'footer'));
 
+		// Get extra data for templates
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
+
+		// Add custom settings to issues
+		HookRegistry::register('issuedao::getAdditionalFieldNames', array($this, 'addIssueDaoFields'));
+		HookRegistry::register('LoadComponentHandler', array($this, 'loadIssueTocHandler'));
+		HookRegistry::register ('TemplateManager::fetch', array($this, 'loadIssueTocTemplateData'));
 	}
 
 	/**
@@ -114,6 +120,96 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 			'sectionPath' => $section->getData('browseByPath'),
 		));
 	}
+
+	/**
+	 * Add the additional sttings fields to the issue dao
+	 *
+	 * @param $hookName string
+	 * @param $args array [
+	 *		@option SectionDAO
+	 *		@option array List of additional fields
+	 * ]
+	 */
+	public function addIssueDaoFields($hookName, $args) {
+		$fields =& $args[1];
+		$fields[] = 'group1Name';
+		$fields[] = 'group1Description';
+		$fields[] = 'group1Items';
+		$fields[] = 'group1IsSpecial';
+		$fields[] = 'group2Name';
+		$fields[] = 'group2Description';
+		$fields[] = 'group2Items';
+		$fields[] = 'group2IsSpecial';
+		$fields[] = 'group3Name';
+		$fields[] = 'group3Description';
+		$fields[] = 'group3Items';
+		$fields[] = 'group3IsSpecial';
+		$fields[] = 'group4Name';
+		$fields[] = 'group4Description';
+		$fields[] = 'group4Items';
+		$fields[] = 'group4IsSpecial';
+		$fields[] = 'group5Name';
+		$fields[] = 'group5Description';
+		$fields[] = 'group5Items';
+		$fields[] = 'group5IsSpecial';
+		$fields[] = 'group6Name';
+		$fields[] = 'group6Description';
+		$fields[] = 'group6Items';
+		$fields[] = 'group6IsSpecial';
+	}
+
+	/**
+	 * Load the handler to deal with browse by section page requests
+	 *
+	 * @param $hookName string `LoadComponentHandler`
+	 * @param $args array [
+	 * 		@option string component
+	 * 		@option string op
+	 * ]
+	 * @return bool
+	 */
+	public function loadIssueTocHandler($hookName, $args) {
+		$component = $args[0];
+
+		if ($component === 'plugins.themes.criticalTimes.controllers.CriticalTimesIssueTocHandler') {
+			$op = $args[1];
+			$this->import('controllers.CriticalTimesIssueTocHandler');
+			$handler = new CriticalTimesIssueTocHandler();
+			$handler->_plugin = $this;
+			if (method_exists($handler, $op)) {
+				$request = Application::getRequest();
+				$router = $request->getRouter();
+				$serviceEndpoint = array($handler, $op);
+				$router->_authorizeInitializeAndCallRequest($serviceEndpoint, $request, $args);
+				exit;
+			}
+		}
+	}
+
+	/**
+	 * Load custom data for the issue table of contents form
+	 *
+	 * @param string $hookName
+	 * @param array $args [
+	 *		@option TemplateManager
+	 *		@option string Template file requested
+	 *		@option string
+	 *		@option string
+	 *		@option string output HTML
+	 * ]
+	 */
+	public function loadIssueTocTemplateData($hookName, $args) {
+		$templateMgr =& $args[0];
+		$template = $args[1];
+
+		if ($template === 'controllers/grid/issues/issueToc.tpl') {
+			$this->import('controllers.CriticalTimesIssueTocFormHandler');
+			$issueTocForm = new CriticalTimesIssueTocFormHandler($templateMgr->get_template_vars('issue'));
+			$issueTocForm->initData($request);
+			$templateMgr->assign($issueTocForm->_data);
+		}
+	}
+
 }
 
 ?>

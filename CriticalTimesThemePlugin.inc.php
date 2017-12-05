@@ -14,6 +14,7 @@
  *  Consortium of Critical Theory
  */
 
+define('CRITICAL_TIMES_MAX_GROUPS', 6);
 import('lib.pkp.classes.plugins.ThemePlugin');
 
 class CriticalTimesThemePlugin extends ThemePlugin {
@@ -115,13 +116,42 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 			return $author->getFullName();
 		}, $article->getAuthors()));
 
-		$section = $templateMgr->get_template_vars('section');
-		$sectionDao = DAORegistry::getDAO('SectionDAO');
-		$section = $sectionDao->getById($section->getId(), $contextId);
+		// Determine if this article was published as part of a special section
+		$publishedArticleDao = DAORegistry::getDAO('PublishedArticleDAO');
+		$issueDao = DAORegistry::getDAO('IssueDAO');
+		$issue = $issueDao->getById($article->getIssueId(), $contextId);
+		$specialSection = null;
+		for ($i = 1; $i < (CRITICAL_TIMES_MAX_GROUPS + 1); $i++) {
+			if (!$issue->getData('group' . $i . 'IsSpecial')) {
+				continue;
+			}
+			$items = explode(',', trim($issue->getData('group' . $i . 'Items')));
+			$items = array_values(array_unique($items));
+			if (in_array($article->getId(), $items)) {
+				$groupArticles = array();
+				foreach ($items as $item) {
+					if (!ctype_digit($item) || $item == $article->getId()) {
+						continue;
+					}
+					$groupArticle = $publishedArticleDao->getById($item);
+					if ($groupArticle) {
+						$groupArticles[] = $groupArticle;
+					}
+				}
+			}
+			if (count($groupArticles)) {
+				$specialSection = array(
+					'name' => $issue->getData('group' . $i . 'Name'),
+					'description' => $issue->getData('group' . $i . 'Description'),
+					'articles' => $groupArticles,
+				);
+			}
+			break;
+		}
 
 		$templateMgr->assign(array(
 			'authorString' => $authorString,
-			'sectionPath' => $section->getData('browseByPath'),
+			'specialSection' => $specialSection,
 		));
 	}
 
@@ -141,7 +171,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		// Get data for grouped issue table of contents
 		$publishedArticleDao = DAORegistry::getDAO('PublishedArticleDAO');
 		$toc = array();
-		for ($i = 1; $i < 7; $i++) {
+		for ($i = 1; $i < (CRITICAL_TIMES_MAX_GROUPS + 1); $i++) {
 			$items = explode(',', trim($issue->getData('group' . $i . 'Items')));
 			$items = array_values(array_unique($items));
 			$articles = array();

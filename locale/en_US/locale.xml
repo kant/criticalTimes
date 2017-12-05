@@ -28,6 +28,8 @@
 	<!-- Article details -->
 	<message key="plugins.themes.criticalTimes.article.galleys">View</message>
 	<message key="plugins.themes.criticalTimes.article.galleys.supplementary">Supplementary Files</message>
+	<message key="plugins.themes.criticalTimes.article.specialSection">Published in a Special Section</message>
+	<message key="plugins.themes.criticalTimes.article.fullIssue">Read the {$link}full issue{$linkEnd}.</message>
 
 	<!-- TOC Configuration -->
 	<message key="plugins.themes.criticalTimes.toc.group">Group {$number}</message>

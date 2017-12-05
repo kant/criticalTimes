@@ -25,12 +25,13 @@
  *
  * The following is added by this theme:
  * @uses $authorString string Comma-separated list of author names
- * @uses $sectionUrl string URL to the section archive
+ * @uses $specialSection array Details about a special section that this article
+ *   was published in, if available.
  *}
 <article class="articleFull">
 	<div class="articleFull__header">
 		<div class="articleFull__section">
-			<a href="{url router=$smarty.const.ROUTE_PAGE page="section" op="view" path=$sectionPath}">
+			<a href="{url router=$smarty.const.ROUTE_PAGE page="section" op="view" path=$section->getData('browseByPath')}">
 				{$section->getLocalizedTitle()}
 			</a>
 		</div>
@@ -169,3 +170,24 @@
 	</div><!-- .row -->
 
 </article>
+
+{if $specialSection}
+	<div class="row issueGroup issueGroup--onArticleDetail">
+		<div class="col--left">
+			<div class="issueGroup__section">{translate key="plugins.themes.criticalTimes.article.specialSection"}</div>
+			<div class="issueGroup__title">{$specialSection.name}</div>
+			<div class="issueGroup__description">
+				{$specialSection.description}
+				<p>
+					{url|assign:'issueUrl' page="issue" op="view" path=$issue->getBestIssueId()}
+					{translate key="plugins.themes.criticalTimes.article.fullIssue" link="<a href=\""|concat:$issueUrl|concat:'">' linkEnd="</a>"}
+				</p>
+			</div>
+		</div>
+		<div class="col--right">
+			{foreach from=$specialSection.articles item="article"}
+				{include file="frontend/objects/article_summary.tpl"}
+			{/foreach}
+		</div>
+	</div>
+{/if}

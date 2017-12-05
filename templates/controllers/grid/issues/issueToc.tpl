@@ -22,12 +22,7 @@
 
 	{fbvFormArea id="issueTocSection1"}
 		<h2>{translate key="plugins.themes.criticalTimes.toc.group" number=1}</h2>
-		{fbvFormSection title="plugins.themes.criticalTimes.toc.group.name"}
-			{fbvElement type="text" id="group1Name" value=$group1Name}
-		{/fbvFormSection}
-		{fbvFormSection title="plugins.themes.criticalTimes.toc.group.description"}
-			{fbvElement type="textarea" id="group1Description" rich=true value=$group1Description}
-		{/fbvFormSection}
+		<p>{translate key="plugins.themes.criticalTimes.toc.group1.note"}</p>
 		{fbvFormSection title="plugins.themes.criticalTimes.toc.group.items"}
 			{fbvElement type="text" label="plugins.themes.criticalTimes.toc.group.items.description" id="group1Items" value=$group1Items}
 		{/fbvFormSection}

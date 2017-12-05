@@ -22,6 +22,9 @@
 	<message key="plugins.themes.criticalTimes.footer.address"><![CDATA[Stephens Hall<br>University of California, Berkley<br>Berkley, CA 94720-23340]]></message>
 	<message key="plugins.themes.criticalTimes.footer.support">Supported by a grant to the University of California, Berkley from the Andrew W. Mellon Foundation.</message>
 
+	<!-- Issue details -->
+	<message key="plugins.themes.criticalTimes.issue.specialSection">Special Section</message>
+
 	<!-- Article details -->
 	<message key="plugins.themes.criticalTimes.article.galleys">View</message>
 	<message key="plugins.themes.criticalTimes.article.galleys.supplementary">Supplementary Files</message>
@@ -33,5 +36,5 @@
 	<message key="plugins.themes.criticalTimes.toc.group.special">Should articles in this group be identified as a special section?</message>
 	<message key="plugins.themes.criticalTimes.toc.group.items">Article IDs</message>
 	<message key="plugins.themes.criticalTimes.toc.group.items.description">Article IDs should be separated by a comma, eg - 12,35,67,43</message>
-
+	<message key="plugins.themes.criticalTimes.toc.group1.note">The first group will be displayed next to the title and description for the entire issue.</message>
 </locale>

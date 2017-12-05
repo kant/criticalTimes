@@ -33,8 +33,6 @@ class CriticalTimesIssueTocFormHandler extends Form {
 	 * @copydoc Form::initData()
 	 */
 	function initData($request) {
-		$this->setData('group1Name', $this->_issue->getData('group1Name'));
-		$this->setData('group1Description', $this->_issue->getData('group1Description'));
 		$this->setData('group1Items', $this->_issue->getData('group1Items'));
 		$this->setData('group1IsSpecial', $this->_issue->getData('group1IsSpecial'));
 		$this->setData('group2Name', $this->_issue->getData('group2Name'));
@@ -65,7 +63,7 @@ class CriticalTimesIssueTocFormHandler extends Form {
 	 */
 	function readInputData() {
 		$this->readUserVars(array(
-			'group1Name','group1Description','group1Items','group1IsSpecial',
+			'group1Items','group1IsSpecial',
 			'group2Name','group2Description','group2Items','group2IsSpecial',
 			'group3Name','group3Description','group3Items','group3IsSpecial',
 			'group4Name','group4Description','group4Items','group4IsSpecial',
@@ -83,8 +81,6 @@ class CriticalTimesIssueTocFormHandler extends Form {
 		$contextId = $context ? $context->getId() : CONTEXT_ID_NONE;
 		$issueDao = DAORegistry::getDAO('IssueDAO');
 
-		$this->_issue->setData('group1Name', $this->getData('group1Name'));
-		$this->_issue->setData('group1Description', $this->getData('group1Description'));
 		$this->_issue->setData('group1Items', $this->getData('group1Items'));
 		$this->_issue->setData('group1IsSpecial', $this->getData('group1IsSpecial'));
 		$this->_issue->setData('group2Name', $this->getData('group2Name'));

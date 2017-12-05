@@ -1,13 +1,27 @@
 // Summary of an article
 .articleSummary {
-	margin-top: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 
 	&:first-child {
-		margin-top: 0;
+		padding-top: 0;
 	}
 
 	&:last-child {
-		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+
+.articleSummary__cover {
+	margin-bottom: 0.5rem;
+	width: 300px;
+	max-width: 100%;
+	background: @dark;
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
 	}
 }
 
@@ -22,16 +36,6 @@
 	font-weight: @normal;
 }
 
-.articleSummary__art {
-	display: block;
-	width: 300px;
-	height: auto;
-	max-width: 100%;
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
-	background: @dark;
-}
-
 .articleSummary__title {
 	font-weight: @bold;
 	line-height: 1.5em;
@@ -41,10 +45,22 @@
 	font-weight: @normal;
 }
 
+.articleSummary--withCover {
+	background: @dark;
+	color: #fff;
+
+	.articleSummary__section,
+	.articleSummary__title,
+	.articleSummary__authors {
+		color: #fff;
+	}
+}
+
 @media (min-width: @break-lg) {
 
 	.articleSummary {
-		margin-top: 3rem;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
 	}
 
 	.articleSummary__section {
@@ -66,7 +82,8 @@
 @media (min-width: @break-xl) {
 
 	.articleSummary {
-		margin-top: 4rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
 	}
 
 	.articleSummary__title {

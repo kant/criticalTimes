@@ -92,6 +92,10 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		if ($template === 'frontend/pages/article.tpl') {
 			$this->loadArticleTemplateData($hookName, $args);
 		}
+
+		if ($template === 'frontend/pages/issue.tpl' || $template === 'frontend/pages/indexJournal.tpl') {
+			$this->loadIssueTemplateData($hookName, $args);
+		}
 	}
 
 	/**
@@ -122,6 +126,51 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 	}
 
 	/**
+	 * Load custom data for an issue (homepage and single issue)
+	 *
+	 * @see CriticalTimesThemePlugin::loadTemplateData()
+	 */
+	public function loadIssueTemplateData($hookName, $args) {
+		$request = Application::getRequest();
+		$context = $request->getContext();
+		$contextId = $context ? $context->getId() : CONTEXT_ID_NONE;
+		$dispatcher = $request->getDispatcher();
+		$templateMgr = $args[0];
+		$issue = $templateMgr->get_template_vars('issue');
+
+		// Get data for grouped issue table of contents
+		$publishedArticleDao = DAORegistry::getDAO('PublishedArticleDAO');
+		$toc = array();
+		for ($i = 1; $i < 7; $i++) {
+			$items = explode(',', trim($issue->getData('group' . $i . 'Items')));
+			$items = array_values(array_unique($items));
+			$articles = array();
+			foreach ($items as $item) {
+				if (!ctype_digit($item)) {
+					continue;
+				}
+				$article = $publishedArticleDao->getById($item);
+				if ($article) {
+					$articles[] = $article;
+				}
+			}
+
+			if (!empty($articles)) {
+				$toc[] = array(
+					'name' => $issue->getData('group' . $i . 'Name'),
+					'description' => $issue->getData('group' . $i . 'Description'),
+					'articles' => $articles,
+					'isSpecial' => $issue->getData('group' . $i . 'IsSpecial'),
+				);
+			}
+		}
+
+		$templateMgr->assign(array(
+			'ctToc' => $toc,
+		));
+	}
+
+	/**
 	 * Add the additional sttings fields to the issue dao
 	 *
 	 * @param $hookName string
@@ -132,8 +181,6 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 	 */
 	public function addIssueDaoFields($hookName, $args) {
 		$fields =& $args[1];
-		$fields[] = 'group1Name';
-		$fields[] = 'group1Description';
 		$fields[] = 'group1Items';
 		$fields[] = 'group1IsSpecial';
 		$fields[] = 'group2Name';

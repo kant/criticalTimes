@@ -24,6 +24,15 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 	 */
 	public function init() {
 
+		$this->addOption('spotlightItem', 'text', array(
+			'label' => 'plugins.themes.criticalTimes.spotlight.item'
+		));
+
+		$this->addOption('spotlightIntro', 'text', array(
+			'label' => 'plugins.themes.criticalTimes.spotlight.intro',
+			'description' => 'plugins.themes.criticalTimes.spotlight.intro.description'
+		));
+
 		$this->addStyle(
 			'fontSourceSerifPro',
 			'//fonts.googleapis.com/css?family=Source+Serif+Pro:400,700',
@@ -97,6 +106,10 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		if ($template === 'frontend/pages/issue.tpl' || $template === 'frontend/pages/indexJournal.tpl') {
 			$this->loadIssueTemplateData($hookName, $args);
 		}
+
+		if ($template === 'frontend/pages/indexJournal.tpl') {
+			$this->loadSpotlightTemplateData($hookName, $args);
+		}
 	}
 
 	/**
@@ -164,7 +177,6 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		$request = Application::getRequest();
 		$context = $request->getContext();
 		$contextId = $context ? $context->getId() : CONTEXT_ID_NONE;
-		$dispatcher = $request->getDispatcher();
 		$templateMgr = $args[0];
 		$issue = $templateMgr->get_template_vars('issue');
 
@@ -179,7 +191,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 				if (!ctype_digit($item)) {
 					continue;
 				}
-				$article = $publishedArticleDao->getById($item);
+				$article = $publishedArticleDao->getByArticleId($item);
 				if ($article) {
 					$articles[] = $article;
 				}
@@ -197,6 +209,41 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 
 		$templateMgr->assign(array(
 			'ctToc' => $toc,
+		));
+	}
+
+	/**
+	 * Load custom data for the spotlight on the homepage
+	 *
+	 * @see CriticalTimesThemePlugin::loadTemplateData()
+	 */
+	public function loadSpotlightTemplateData($hookName, $args) {
+		$request = Application::getRequest();
+		$context = $request->getContext();
+		$contextId = $context ? $context->getId() : CONTEXT_ID_NONE;
+		$dispatcher = $request->getDispatcher();
+		$templateMgr = $args[0];
+
+		$spotlightItem = $this->getOption('spotlightItem');
+
+		if (!$spotlightItem || !ctype_digit($spotlightItem)) {
+			return;
+		}
+
+		$publishedArticleDao = DAORegistry::getDAO('PublishedArticleDAO');
+		$spotlightArticle = $publishedArticleDao->getByArticleId($spotlightItem, $contextId);
+
+		if (!$spotlightArticle) {
+			return;
+		}
+
+		$issueDao = DAORegistry::getDAO('IssueDAO');
+		$spotlightIssue = $issueDao->getById($spotlightArticle->getIssueId(), $contextId);
+
+		$templateMgr->assign(array(
+			'spotlightArticle' => $spotlightArticle,
+			'spotlightIntro' => $this->getOption('spotlightIntro'),
+			'spotlightIssue' => $spotlightIssue,
 		));
 	}
 

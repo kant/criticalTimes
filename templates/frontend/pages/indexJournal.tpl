@@ -10,27 +10,38 @@
  * @uses $currentJournal Journal This journal
  * @uses $journalDescription string Journal description
  * @uses $issue Issue Current issue
+ *
+ * Added by the Critical Times theme
+ * @uses $spotlightArticle PublishedArticle Article to highlight on the homepage
+ * @uses $spotlightIntro string Descriptive text before the spotlight title
+ * @uses $spotlightIssue Issue The issue the spotlight is in.
  *}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$currentJournal->getLocalizedName()}
 
-<div class="row spotlight" style="background-image: url('https://images.unsplash.com/photo-1474770447574-779d47496484?auto=format&fit=crop&w=1950&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D')">
-	<div class="col--left">
-		<div class="spotlight__text">
-			<a href="#">
-				<div class="spotlight__context">Latin America</div>
-				<div class="spotlight__title">Critical Memory: Telling Political Time in the Political Afterlife of Violence</div>
-				<div class="spotlight__authors">Nelly Richard and Leonor Arfuch</div>
-			</a>
-			<div class="spotlight__issue">
-				From
-				<a href="#">Issue 1:3, May 2018</a>
+{if $spotlightArticle}
+	<div class="row spotlight" style="background-image: url('{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}')">
+		<div class="col--left">
+			<div class="spotlight__text">
+				<a href="{url page="article" op="view" path=$spotlightArticle->getBestArticleId()}">
+					{if $spotlightIntro}
+						<div class="spotlight__context">{$spotlightIntro|strip_unsafe_html}</div>
+					{/if}
+					<div class="spotlight__title">{$spotlightArticle->getLocalizedTitle()|strip_unsafe_html}</div>
+					<div class="spotlight__authors">{$spotlightArticle->getAuthorString()|strip_unsafe_html}</div>
+				</a>
+				{if $spotlightIssue}
+					<div class="spotlight__issue">
+						From
+						<a href="{url page="issue" op="view" path=$spotlightIssue->getBestIssueId()}">{$spotlightIssue->getIssueIdentification()}</a>
+					</div>
+				{/if}
 			</div>
 		</div>
+		<div class="col--right">
+			<img class="spotlight__image" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}">
+		</div>
 	</div>
-	<div class="col--right">
-		<img class="spotlight__image" src="https://images.unsplash.com/photo-1474770447574-779d47496484?auto=format&fit=crop&w=1950&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D">
-	</div>
-</div>
+{/if}
 
 {include file="frontend/objects/issue_toc.tpl" ctIsCurrent=true}
 

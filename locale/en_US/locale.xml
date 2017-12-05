@@ -39,4 +39,10 @@
 	<message key="plugins.themes.criticalTimes.toc.group.items">Article IDs</message>
 	<message key="plugins.themes.criticalTimes.toc.group.items.description">Article IDs should be separated by a comma, eg - 12,35,67,43</message>
 	<message key="plugins.themes.criticalTimes.toc.group1.note">The first group will be displayed next to the title and description for the entire issue.</message>
+
+	<!-- Homepage spotlight configuration -->
+	<message key="plugins.themes.criticalTimes.spotlight.item">Spotlight Article ID</message>
+	<message key="plugins.themes.criticalTimes.spotlight.intro">Spotlight Introduction</message>
+	<message key="plugins.themes.criticalTimes.spotlight.intro.description">This short label will appear above the title of the article being spotlighted.</message>
+
 </locale>

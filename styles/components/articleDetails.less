@@ -66,6 +66,18 @@
 	}
 }
 
+.articleFull__cover {
+	width: 300px;
+	max-width: 100%;
+	background: @dark;
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
 .articleFull__issue,
 .articleFull__doi {
 	font-weight: @normal;
@@ -134,6 +146,10 @@
 		font-size: 1.1rem;
 		line-height: 1.4em;
 	}
+
+	.articleFull__cover {
+		width: 600px;
+	}
 }
 
 @media (min-width: @break-lg) {
@@ -191,7 +207,6 @@
 @media (min-width: @break-xl) {
 
 	.articleFull__header,
-	.articleFull__main,
 	.articleFull__details {
 		padding-left: 3rem;
 		padding-right: 3rem;
@@ -256,9 +271,17 @@
 		}
 	}
 
-	.articleFull__item {
-		margin-top: 3rem;
-		margin-bottom: 3rem;
+	// Allow the image to go edge-to-edge
+	.articleFull__main {
+		padding-left: 0;
+		padding-right: 0;
+
+		> * {
+			margin-top: 3rem;
+			margin-bottom: 3rem;
+			padding-left: 3rem;
+			padding-right: 3rem;
+		}
 	}
 
 	.articleFull__item--abstract {
@@ -270,6 +293,12 @@
 		.articleFull__itemLabel {
 			.-screenReader;
 		}
+	}
+
+	.articleFull__cover {
+		margin-top: 0;
+		padding: 0;
+		width: 100%;
 	}
 
 	// Show galley links below abstract

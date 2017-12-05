@@ -55,6 +55,12 @@
 
 		<div class="articleFull__main">
 
+			{if $article->getLocalizedCoverImage()}
+				<div class="articleFull__cover">
+					<img src="{$article->getLocalizedCoverImageUrl()|escape}"{if $article->getLocalizedCoverImageAltText() != ''} alt="{$article->getLocalizedCoverImageAltText()|escape}"{/if}>
+				</div>
+			{/if}
+
 			{if $article->getLocalizedAbstract()}
 				<div class="articleFull__item articleFull__item--abstract">
 					<h2 class="articleFull__itemLabel">

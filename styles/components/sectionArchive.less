@@ -1,0 +1,91 @@
+// Section archive pages
+.sectionArchive .col--left {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.sectionArchive__title {
+	margin: 0;
+	font-size: 1.2rem;
+	line-height: 1.5em;
+}
+
+.sectionArchive__description {
+	line-height: 2em;
+}
+
+.sectionArchive__issueId,
+.sectionArchive__issueTitle {
+	color: @text;
+
+	&:hover,
+	&:focus {
+		color: @text;
+	}
+}
+
+.sectionArchive__issueTitle {
+	margin: 0;
+	font-size: 1.2rem;
+	line-height: 1.5em;
+}
+
+.sectionArchive__issueId {
+	font-size: 1rem;
+	font-weight: @normal;
+	line-height: 1.5em;
+}
+
+@media(min-width: @break-md) {
+
+	.sectionArchive .col--left {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+}
+
+@media(min-width: @break-lg) {
+
+	.sectionArchive .col--left {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.sectionArchive__title {
+		font-size: 2rem;
+		line-height: 1.5em;
+	}
+
+	.sectionArchive__issueTitle {
+		font-size: 1.4rem;
+		line-height: 1.5em;
+	}
+
+	.sectionArchive__issueId {
+		font-size: 1.2rem;
+		line-height: 1.5em;
+	}
+}
+
+@media(min-width: @break-xl) {
+
+	.sectionArchive .col--left {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+
+	.sectionArchive__title {
+		font-size: 2.5rem;
+		line-height: 1.5em;
+	}
+
+	.sectionArchive__issueTitle {
+		font-size: 1.8rem;
+		line-height: 1.5em;
+	}
+
+	.sectionArchive__issueId {
+		font-size: 1.4rem;
+		line-height: 1.5em;
+	}
+}

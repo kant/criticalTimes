@@ -221,7 +221,6 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		$request = Application::getRequest();
 		$context = $request->getContext();
 		$contextId = $context ? $context->getId() : CONTEXT_ID_NONE;
-		$dispatcher = $request->getDispatcher();
 		$templateMgr = $args[0];
 
 		$spotlightItem = $this->getOption('spotlightItem');

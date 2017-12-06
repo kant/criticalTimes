@@ -45,4 +45,8 @@
 	<message key="plugins.themes.criticalTimes.spotlight.intro">Spotlight Introduction</message>
 	<message key="plugins.themes.criticalTimes.spotlight.intro.description">This short label will appear above the title of the article being spotlighted.</message>
 
+	<!-- Section archives -->
+	<message key="plugins.themes.criticalTimes.section.prev">Previous</message>
+	<message key="plugins.themes.criticalTimes.section.next">Next</message>
+	<message key="plugins.themes.criticalTimes.section.showing">{$start}-{$end} of {$total}</message>
 </locale>

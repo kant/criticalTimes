@@ -13,6 +13,9 @@
  * @uses $showDatePublished bool Show the date this article was published?
  * @uses $hideGalleys bool Hide the article galleys for this article?
  * @uses $primaryGenreIds array List of file genre ids for primary file types
+ *
+ * Added by Critical Times Theme
+ * @uses $hideSection bool
  *}
 
 <div class="articleSummary{if $article->getLocalizedCoverImage()} articleSummary--withCover{/if}">
@@ -26,7 +29,9 @@
 	{/if}
 
 	<a href="{url page="article" op="view" path=$article->getBestArticleId()}">
-		<div class="articleSummary__section">{$article->getSectionTitle()}</div>
+		{if !$hideSection}
+			<div class="articleSummary__section">{$article->getSectionTitle()}</div>
+		{/if}
 		<div class="articleSummary__title">{$article->getLocalizedTitle()|strip_unsafe_html}</div>
 		<div class="articleSummary__authors">{$article->getAuthorString()|strip_unsafe_html}</div>
 	</a>

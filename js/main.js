@@ -14,4 +14,14 @@
 	if (typeof $.fn.dropdown !== 'undefined') {
 		$('[data-toggle="dropdown"]').dropdown();
 	}
+
+	// Toggle nav menu on small screens
+	var $body = $('body');
+	$('#siteHeader__navToggle, #siteHeader__screen').click(function() {
+		if ($body.hasClass('navIsOpen')) {
+			$body.removeClass('navIsOpen');
+		} else {
+			$body.addClass('navIsOpen');
+		}
+	});
 })(jQuery);

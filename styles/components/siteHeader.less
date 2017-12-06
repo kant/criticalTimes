@@ -3,6 +3,10 @@ body {
 	padding-top: 40px; // make room for top bar
 }
 
+.siteHeader {
+	position: relative;
+}
+
 .siteHeader__topBar {
 	position: fixed;
 	top: 0;
@@ -11,6 +15,7 @@ body {
 	text-align: center;
 	background: @bg;
 	border-bottom: 1px solid @border;
+	z-index: 999;
 }
 
 .siteHeader__logo {
@@ -37,6 +42,7 @@ body {
 	transform: translateY(-50%);
 	padding: 0.5em;
 	min-width: 2.2rem;
+	min-height: 40px;
 	background: transparent;
 	border: none;
 	font-size: 0.85rem;
@@ -47,17 +53,24 @@ body {
 }
 
 .siteHeader__navToggleIcon {
-	position: absolute;
-	top: 50%;
-	left: 0.5rem;
-	transform: translateY(-50%);
 
 	> span {
 		display: block;
+		position: absolute;
+		top: 13px;
+		left: 8px;
 		width: 1.2rem;
 		height: 3px;
-		margin: 3px 0;
 		background: @accent;
+		transition: all 0.2s 0.2s;
+
+		&:nth-child(2) {
+			top: 19px;
+		}
+
+		&:last-child {
+			top: 25px;
+		}
 	}
 }
 
@@ -88,6 +101,29 @@ body {
 	}
 }
 
+.siteHeader__details {
+	position: fixed;
+	top: 40px;
+	right: 100%;
+	width: 100%;
+	background: @bg;
+	transition: right 0.2s 0.2s;
+	z-index: 999;
+}
+
+.siteHeader__screen {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: black;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
 input[type="search"].siteHeader__searchInput {
 	background: transparent;
 	border: 1px solid @border;
@@ -109,6 +145,38 @@ input[type="search"].siteHeader__searchInput {
 
 	> p:last-child {
 		margin-bottom: 0;
+	}
+}
+
+body.navIsOpen {
+
+	.siteHeader__details {
+		right: 0;
+	}
+
+	.siteHeader__screen {
+		display: block;
+		opacity: 0.5;
+	}
+
+	.siteHeader__navToggleIcon {
+
+		> span {
+
+			&:first-child {
+				transform: rotate(45deg);
+				top: 18px;
+			}
+
+			&:nth-child(2) {
+				opacity: 0;
+			}
+
+			&:last-child {
+				transform: rotate(-45deg);
+				top: 18px;
+			}
+		}
 	}
 }
 
@@ -140,8 +208,17 @@ input[type="search"].siteHeader__searchInput {
 	}
 
 	.siteHeader__navToggle,
-	.siteHeader__searchLink {
+	.siteHeader__searchLink,
+	.siteHeader__screen {
 		display: none;
+	}
+
+	.siteHeader__details {
+		position: relative;
+		top: auto;
+		right: auto;
+		width: inherit;
+		background: transparent;
 	}
 
 	.siteHeader__search {

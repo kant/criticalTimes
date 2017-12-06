@@ -47,6 +47,9 @@
 		</footer>
 	</div><!-- .siteWrapper -->
 
+	{* Used as a screen on the page when the nav menu is open on small screens *}
+	<div id="siteHeader__screen" class="siteHeader__screen"></div>
+
 	{load_script context="frontend"}
 	{call_hook name="Templates::Common::Footer::PageFooter"}
 </body>

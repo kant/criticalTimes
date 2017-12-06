@@ -46,7 +46,7 @@
 						<img src="{$ctThemePath|concat:"/img/logo.png"}" alt="{translate|escape key="plugins.themes.criticalTimes.logoAltText"}">
 					</a>
 				</div>
-				<button class="siteHeader__navToggle">
+				<button id="siteHeader__navToggle" class="siteHeader__navToggle">
 					<span class="siteHeader__navToggleIcon">
 						<span></span>
 						<span></span>

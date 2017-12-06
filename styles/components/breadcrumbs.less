@@ -1,0 +1,59 @@
+// Navigation breadcrumb
+//
+// This uses class names and HTML provided by OJS
+.cmp_breadcrumbs {
+	margin-bottom: 2rem;
+	font-size: 1.2rem;
+	line-height: 1.5em;
+
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;
+
+		&:first-child {
+			display: none;
+		}
+	}
+
+	h1 {
+		margin: 0;
+		font-size: 1.2rem;
+		line-height: 1.5em;
+	}
+
+	.separator {
+		margin-left: 0.25rem;
+		margin-right: 0.25rem;
+		color: @text-light;
+	}
+
+	@media(min-width: @break-md) {
+		margin-top: 1rem;
+
+		h1 {
+			font-size: 1.5rem;
+			line-height: 1.5em;
+		}
+	}
+
+	@media(min-width: @break-lg) {
+
+		h1 {
+			font-size: 2rem;
+			line-height: 1.5em;
+		}
+	}
+
+	@media(min-width: @break-xl) {
+
+		h1 {
+			font-size: 2.5rem;
+			line-height: 1.5em;
+		}
+	}
+}

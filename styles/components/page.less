@@ -1,0 +1,112 @@
+// Common page structure (about, editorial, submissions, etc)
+//
+// This uses class names and HTML provided by OJS
+.page,
+.page_title { // .page_title on custom nav pages
+	padding: 1rem;
+
+	@media (min-width: @break-md) {
+		padding: 1.5rem;
+	}
+
+	@media (min-width: @break-lg) {
+		padding: 2rem;
+		max-width: 50rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media (min-width: @break-xl) {
+		padding: 3rem;
+	}
+}
+
+// Mimics the h1 in .cmp_breadcrumbss
+.page_title {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.2rem;
+	line-height: 1.5em;
+}
+
+@media(min-width: @break-md) {
+	margin-top: 1rem;
+
+	.page_title {
+		font-size: 1.5rem;
+		line-height: 1.5em;
+	}
+}
+
+@media(min-width: @break-lg) {
+
+	.page_title {
+		font-size: 2rem;
+		line-height: 1.5em;
+	}
+}
+
+@media(min-width: @break-xl) {
+
+	.page_title {
+		font-size: 2.5rem;
+		line-height: 1.5em;
+	}
+}
+
+.page_title + .page {
+	padding-top: 0;
+
+	> p:first-child {
+		margin-top: 0;
+	}
+}
+
+.page {
+
+	p,
+	.submission_checklist {
+		margin-top: 2em;
+		margin-bottom: 2em;
+		line-height: 2rem;
+	}
+
+	h1 + p,
+	h2 + p,
+	h3 + p {
+		margin-top: 1em;
+	}
+
+	h2 {
+		margin-top: 2em;
+		margin-bottom: 1rem;
+		font-size: 1.2rem;
+		line-height: 1.5em;
+	}
+
+	h3 {
+		margin-top: 2em;
+		margin-bottom: 1rem;
+		font-size: 1rem;
+		line-height: 1.5em;
+	}
+
+	// Make a submission notice
+	.cmp_notification {
+		padding: 1rem;
+		border: 1px solid @border;
+	}
+
+	@media(min-width: @break-lg) {
+
+		h2 {
+			font-size: 1.5rem;
+			line-height: 1.5em;
+		}
+
+		h3 {
+			font-size: 1.2srem;
+			line-height: 1.5em;
+		}
+	}
+}

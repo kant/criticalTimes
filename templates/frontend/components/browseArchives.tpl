@@ -6,6 +6,8 @@
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @brief A panel to display a list of section archives to browse.
+ *
+ * @uses ctSections array All browseable sections on the site
  *}
 <div class="row browseArchives">
 	<div class="col--left">
@@ -18,24 +20,13 @@
 	</div>
 	<div class="col--right">
 		<div class="browseArchives__list -clearFix">
-			<div class="browseArchives__listItem">
-				<a href="#" class="browseArchives__listItemText">Essays</a>
-			</div>
-			<div class="browseArchives__listItem">
-				<a href="#" class="browseArchives__listItemText">Lectures</a>
-			</div>
-			<div class="browseArchives__listItem">
-				<a href="#" class="browseArchives__listItemText">Interviews</a>
-			</div>
-			<div class="browseArchives__listItem">
-				<a href="#" class="browseArchives__listItemText">Artistic Interventions</a>
-			</div>
-			<div class="browseArchives__listItem">
-				<a href="#" class="browseArchives__listItemText">Reprints</a>
-			</div>
-			<div class="browseArchives__listItem">
-				<a href="#" class="browseArchives__listItemText">Dispatches</a>
-			</div>
+			{foreach from=$ctSections item="ctSection"}
+				<div class="browseArchives__listItem">
+					<a class="browseArchives__listItemText" href="{url router=$smarty.const.ROUTE_PAGE page="section" op="view" path=$ctSection->getData('browseByPath')}">
+						{$ctSection->getLocalizedTitle()}
+					</a>
+				</div>
+			{/foreach}
 		</div>
 	</div>
 </div>

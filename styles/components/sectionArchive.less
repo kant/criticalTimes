@@ -36,6 +36,22 @@
 	line-height: 1.5em;
 }
 
+.sectionArchive {
+
+	// Don't show dark background on section archives, since every item will
+	// have that background
+	.articleSummary--withCover {
+		background: transparent;
+		color: @text;
+
+		.articleSummary__section,
+		.articleSummary__title,
+		.articleSummary__authors {
+			color: @text;
+		}
+	}
+}
+
 @media(min-width: @break-md) {
 
 	.sectionArchive .col--left {

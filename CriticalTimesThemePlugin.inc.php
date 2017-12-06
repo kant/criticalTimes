@@ -94,8 +94,20 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 	 */
 	public function loadTemplateData($hookName, $args) {
 		$request = Application::getRequest();
+		$context = $request->getContext();
+		$contextId = $context ? $context->getId() : CONTEXT_ID_NONE;
 		$templateMgr = $args[0];
 		$template = $args[1];
+
+		$sectionDao = DAORegistry::getDAO('SectionDAO');
+		$result = $sectionDao->getByContextId($contextId);
+		$browseableSections = array();
+		while ($section = $result->next()) {
+			if ($section->getData('browseByEnabled')) {
+				$browseableSections[] = $section;
+			}
+		}
+		$templateMgr->assign('ctSections', $browseableSections);
 
 		$templateMgr->assign('ctThemePath', $request->getBaseUrl() . '/' . $this->getPluginPath());
 

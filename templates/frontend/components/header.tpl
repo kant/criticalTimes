@@ -68,7 +68,7 @@
 				<form class="siteHeader__search" action="{url page="search" op="search"}" method="post" role="search">
 					{csrf}
 					<span class="fa fa-search" aria-hidden="true"></span>
-					<input class="siteHeader__searchInput" name="query" value="{$searchQuery|escape}" type="text" aria-label="{translate|escape key="common.searchQuery"}" placeholder="{translate|escape key="common.search"}">
+					<input class="siteHeader__searchInput" name="query" value="{$searchQuery|escape}" type="search" aria-label="{translate|escape key="common.searchQuery"}" placeholder="{translate|escape key="common.search"}">
 					<button type="submit" class="-screenReader">
 						{translate key="common.search"}
 					</button>

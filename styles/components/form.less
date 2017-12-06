@@ -1,0 +1,120 @@
+// Form elements
+//
+// Based on OJS-provided HTML
+.cmp_form {
+	margin-bottom: 3rem;
+
+	fieldset {
+		border: none;
+		padding: 0;
+
+		+ fieldset {
+			margin-top: 2rem;
+		}
+	}
+
+	legend {
+		margin-bottom: 1rem;
+		font-weight: @bold;
+	}
+
+	.fields > * {
+		margin-bottom: 1.5rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.label {
+		display: block;
+	}
+
+	.required {
+		color: red;
+	}
+
+	button {
+		.button;
+	}
+
+	.buttons {
+		margin-top: 1.5rem;
+	}
+
+	// Login errors
+	.pkp_form_error {
+		margin-bottom: 1.5rem;
+		padding: 1rem;
+		border: 1px solid red;
+	}
+
+	// Registration errors
+	#formErrors {
+		margin-bottom: 1.5rem;
+		padding: 1rem;
+		border: 1px solid red;
+
+		.pkp_form_error_list {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				margin: 0.5rem 0;
+				padding: 0;
+			}
+		}
+	}
+
+	&.login {
+
+		.password a {
+			display: inline-block;
+			margin-top: 0.5rem;
+		}
+
+		.checkbox .label {
+			display: inline;
+		}
+
+		.register {
+			margin-left: 0.5rem;
+		}
+	}
+
+	&.register {
+
+		fieldset.reviewer {
+			display: none;
+		}
+
+		.buttons .login {
+			margin-left: 0.5rem;
+		}
+	}
+
+	&.lost_password {
+
+		.buttons .register {
+			margin-left: 0.5rem;
+		}
+	}
+}
+
+@media(min-width: @break-lg) {
+
+	.cmp_form.register {
+		.-clearFix;
+
+		fieldset {
+			float: left;
+			width: 20em;
+			margin-bottom: 3rem;
+
+			+ fieldset {
+				margin-top: 0;
+			}
+		}
+	}
+}

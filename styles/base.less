@@ -29,3 +29,69 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+input[type="password"],
+select,
+textarea {
+	display: block;
+	padding: 0.5em 1em;
+	background: transparent;
+	border: 1px solid @border;
+	border-radius: @radius;
+	max-width: 100%;
+
+	&:hover {
+		border-color: @text-light;
+	}
+
+	&:focus {
+		outline: 0;
+		border-color: @text;
+	}
+}
+
+select {
+  width: 100%;
+	cursor: pointer;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+input[type="password"],
+select {
+
+	@media(min-width: @break-sm) {
+		max-width: 15em;
+	}
+}
+
+input[type="search"] {
+	box-sizing: border-box; // normalize.css resets this to content-box
+}
+
+textarea {
+	width: 100%;
+	min-height: 10em;
+}

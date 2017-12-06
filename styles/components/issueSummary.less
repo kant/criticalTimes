@@ -1,0 +1,49 @@
+// Issue summary
+//
+// This uses markup from OJS
+.obj_issue_summary {
+	margin-bottom: 2rem;
+
+	.cover {
+		display: none;
+	}
+
+	.title {
+		font-size: 1rem;
+		line-height: 1em;
+		color: @text;
+	}
+
+	.description {
+
+		p:first-child {
+			margin-top: 1em;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@media(min-width: @break-md) {
+
+		.title {
+			font-size: 1.2rem;
+			line-height: 1.5em;
+		}
+	}
+
+	@media(min-width: @break-lg) {
+		margin-bottom: 3rem;
+
+		.title {
+			font-size: 1.5rem;
+			line-height: 1.5em;
+		}
+
+		.series {
+			font-size: 1.2rem;
+			line-height: 1.5em;
+		}
+	}
+}

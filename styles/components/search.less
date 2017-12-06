@@ -1,0 +1,83 @@
+// Search page
+//
+// Uses markup from OJS
+.page_search {
+
+	.search_advanced {
+		display: block;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		padding: 1rem;
+		max-width: 100%;
+		border: 1px solid @border;
+
+		legend {
+			margin-bottom: 0;
+			padding: 0.5rem;
+		}
+
+		.date_range .to,
+		.author {
+			margin-top: 1rem;
+		}
+
+		.date_range select {
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+			display: inline-block;
+		}
+
+		[name="dateFromYear"],
+		[name="dateToYear"] {
+			width: 30%;
+		}
+
+		[name="dateFromMonth"],
+		[name="dateToMonth"] {
+			width: 40%;
+		}
+
+		[name="dateFromDay"],
+		[name="dateToDay"] {
+			width: 25%;
+		}
+	}
+
+	[name="authors"] {
+		width: 15em;
+	}
+
+	.submit {
+		margin-top: 1rem;
+	}
+
+	button {
+		.button--primary;
+		padding-top: 1rem;
+		padding-bottom: 1em;
+		width: 100%;
+	}
+
+	.articleSummary--withCover {
+		background: transparent;
+		color: @text;
+
+		.articleSummary__section,
+		.articleSummary__title,
+		.articleSummary__authors {
+			color: @text;
+		}
+	}
+
+	@media (min-width: @break-md) {
+
+		#query {
+			margin-bottom: 2rem;
+			padding-top: 1em;
+			padding-bottom: 1em;
+			width: 100%;
+			max-width: 100%;
+		}
+
+	}
+}

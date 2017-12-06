@@ -19,17 +19,11 @@
 						<div class="siteFooter__address">
 							{translate key="plugins.themes.criticalTimes.footer.address"}
 						</div>
-						{* <div class="siteFooter__social">
+						<div class="siteFooter__social">
 							<a class="siteFooter__socialItem" href="#">
 								<span class="fa fa-facebook-square"></span>
 							</a>
-							<a class="siteFooter__socialItem" href="#">
-								<span class="fa fa-twitter-square"></span>
-							</a>
-							<a class="siteFooter__socialItem" href="#">
-								<span class="fa fa-rss-square"></span>
-							</a>
-						</div> *}
+						</div>
 					</div>
 					<div class="siteFooter__sitemapColumn">
 						{load_menu name="footer" ulClass="siteFooter__siteMap" liClass="siteFooter__siteMapItem"}

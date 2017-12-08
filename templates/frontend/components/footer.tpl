@@ -20,7 +20,7 @@
 							{translate key="plugins.themes.criticalTimes.footer.address"}
 						</div>
 						<div class="siteFooter__social">
-							<a class="siteFooter__socialItem" href="#">
+							<a class="siteFooter__socialItem" href="https://www.facebook.com/pg/International-Consortium-of-Critical-Theory-Programs-216743352161444/posts/?ref=page_internal">
 								<span class="fa fa-facebook-square"></span>
 							</a>
 						</div>

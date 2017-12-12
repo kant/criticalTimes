@@ -298,7 +298,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 	}
 
 	/**
-	 * Load the handler to deal with browse by section page requests
+	 * Load the handler to deal with issue table of contents tab requests
 	 *
 	 * @param $hookName string `LoadComponentHandler`
 	 * @param $args array [

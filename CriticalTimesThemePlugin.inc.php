@@ -192,6 +192,10 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		$templateMgr = $args[0];
 		$issue = $templateMgr->get_template_vars('issue');
 
+		if (!$issue) {
+			return;
+		}
+
 		// Get data for grouped issue table of contents
 		$publishedArticleDao = DAORegistry::getDAO('PublishedArticleDAO');
 		$toc = array();

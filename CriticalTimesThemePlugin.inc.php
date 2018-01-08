@@ -135,7 +135,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		$contextId = $context ? $context->getId() : CONTEXT_ID_NONE;
 		$dispatcher = $request->getDispatcher();
 		$templateMgr = $args[0];
-		$article = $templateMgr->get_template_vars('article');
+		$article = $templateMgr->getTemplateVars('article');
 
 		$authorString = join(', ', array_map(function($author) {
 			return $author->getFullName();
@@ -190,7 +190,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		$context = $request->getContext();
 		$contextId = $context ? $context->getId() : CONTEXT_ID_NONE;
 		$templateMgr = $args[0];
-		$issue = $templateMgr->get_template_vars('issue');
+		$issue = $templateMgr->getTemplateVars('issue');
 
 		if (!$issue) {
 			return;
@@ -343,7 +343,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 
 		if ($template === 'controllers/grid/issues/issueToc.tpl') {
 			$this->import('controllers.CriticalTimesIssueTocFormHandler');
-			$issueTocForm = new CriticalTimesIssueTocFormHandler($templateMgr->get_template_vars('issue'));
+			$issueTocForm = new CriticalTimesIssueTocFormHandler($templateMgr->getTemplateVars('issue'));
 			$issueTocForm->initData($request);
 			$templateMgr->assign($issueTocForm->_data);
 		}

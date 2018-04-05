@@ -17,7 +17,7 @@
 							<img src="{$ctThemePath|concat:"/img/logo-white.png"}" alt="{translate|escape key="plugins.themes.criticalTimes.logoAltText"}">
 						</a>
 						<div class="siteFooter__address">
-							{translate key="plugins.themes.criticalTimes.footer.address"}
+							{$currentJournal->getSetting('mailingAddress')|strip_unsafe_html|nl2br}
 						</div>
 						<div class="siteFooter__social">
 							<a class="siteFooter__socialItem" href="https://www.facebook.com/Critical-Times-Interventions-in-Global-Critical-Theory-441655652939972/">

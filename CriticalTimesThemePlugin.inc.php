@@ -137,10 +137,6 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		$templateMgr = $args[0];
 		$article = $templateMgr->get_template_vars('article');
 
-		$authorString = join(', ', array_map(function($author) {
-			return $author->getFullName();
-		}, $article->getAuthors()));
-
 		// Determine if this article was published as part of a special section
 		$publishedArticleDao = DAORegistry::getDAO('PublishedArticleDAO');
 		$issueDao = DAORegistry::getDAO('IssueDAO');
@@ -175,7 +171,6 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		}
 
 		$templateMgr->assign(array(
-			'authorString' => $authorString,
 			'specialSection' => $specialSection,
 		));
 	}

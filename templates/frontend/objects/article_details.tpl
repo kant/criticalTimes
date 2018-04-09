@@ -45,9 +45,9 @@
 			{/if}
 		</h1>
 
-		{if $authorString}
+		{if $article->getAuthorString()}
 			<div class="articleFull__authors">
-				{$authorString|escape}
+				{$article->getAuthorString()|strip_unsafe_html}
 			</div>
 		{/if}
 	</div>

@@ -23,6 +23,7 @@
 
 	<!-- Issue details -->
 	<message key="plugins.themes.criticalTimes.issue.specialSection">Special Section</message>
+	<message key="plugins.themes.criticalTimes.issue.groupEditor">Edited by {$editor}</message>
 
 	<!-- Article details -->
 	<message key="plugins.themes.criticalTimes.article.galleys">View</message>
@@ -37,6 +38,7 @@
 	<message key="plugins.themes.criticalTimes.toc.group.special">Should articles in this group be identified as a special section?</message>
 	<message key="plugins.themes.criticalTimes.toc.group.items">Article IDs</message>
 	<message key="plugins.themes.criticalTimes.toc.group.items.description">Article IDs should be separated by a comma, eg - 12,35,67,43</message>
+	<message key="plugins.themes.criticalTimes.toc.group.editor">Edited By</message>
 	<message key="plugins.themes.criticalTimes.toc.group1.note">The first group will be displayed next to the title and description for the entire issue.</message>
 
 	<!-- Homepage spotlight configuration -->

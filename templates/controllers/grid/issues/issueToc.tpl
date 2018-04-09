@@ -29,6 +29,9 @@
 		{fbvFormSection list=true}
 			{fbvElement type="checkbox" id="group1IsSpecial" value="1" checked=$group1IsSpecial label="plugins.themes.criticalTimes.toc.group.special"}
 		{/fbvFormSection}
+		{fbvFormSection title="plugins.themes.criticalTimes.toc.group.editor"}
+			{fbvElement type="text" id="group1Editor" value=$group1Editor}
+		{/fbvFormSection}
 	{/fbvFormArea}
 
 	{fbvFormArea id="issueTocSection2"}
@@ -44,6 +47,9 @@
 		{/fbvFormSection}
 		{fbvFormSection list=true}
 			{fbvElement type="checkbox" id="group2IsSpecial" value="2" checked=$group2IsSpecial label="plugins.themes.criticalTimes.toc.group.special"}
+		{/fbvFormSection}
+		{fbvFormSection title="plugins.themes.criticalTimes.toc.group.editor"}
+			{fbvElement type="text" id="group2Editor" value=$group2Editor}
 		{/fbvFormSection}
 	{/fbvFormArea}
 
@@ -61,6 +67,9 @@
 		{fbvFormSection list=true}
 			{fbvElement type="checkbox" id="group3IsSpecial" value="3" checked=$group3IsSpecial label="plugins.themes.criticalTimes.toc.group.special"}
 		{/fbvFormSection}
+		{fbvFormSection title="plugins.themes.criticalTimes.toc.group.editor"}
+			{fbvElement type="text" id="group3Editor" value=$group3Editor}
+		{/fbvFormSection}
 	{/fbvFormArea}
 
 	{fbvFormArea id="issueTocSection4"}
@@ -76,6 +85,9 @@
 		{/fbvFormSection}
 		{fbvFormSection list=true}
 			{fbvElement type="checkbox" id="group4IsSpecial" value="4" checked=$group4IsSpecial label="plugins.themes.criticalTimes.toc.group.special"}
+		{/fbvFormSection}
+		{fbvFormSection title="plugins.themes.criticalTimes.toc.group.editor"}
+			{fbvElement type="text" id="group4Editor" value=$group4Editor}
 		{/fbvFormSection}
 	{/fbvFormArea}
 
@@ -93,6 +105,9 @@
 		{fbvFormSection list=true}
 			{fbvElement type="checkbox" id="group5IsSpecial" value="5" checked=$group5IsSpecial label="plugins.themes.criticalTimes.toc.group.special"}
 		{/fbvFormSection}
+		{fbvFormSection title="plugins.themes.criticalTimes.toc.group.editor"}
+			{fbvElement type="text" id="group5Editor" value=$group5Editor}
+		{/fbvFormSection}
 	{/fbvFormArea}
 
 	{fbvFormArea id="issueTocSection6"}
@@ -108,6 +123,9 @@
 		{/fbvFormSection}
 		{fbvFormSection list=true}
 			{fbvElement type="checkbox" id="group6IsSpecial" value="6" checked=$group6IsSpecial label="plugins.themes.criticalTimes.toc.group.special"}
+		{/fbvFormSection}
+		{fbvFormSection title="plugins.themes.criticalTimes.toc.group.editor"}
+			{fbvElement type="text" id="group6Editor" value=$group6Editor}
 		{/fbvFormSection}
 	{/fbvFormArea}
 

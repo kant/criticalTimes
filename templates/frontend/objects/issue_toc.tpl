@@ -29,6 +29,9 @@
 				{/if}
 				<div class="issueGroup__title">{$issueTitle}</div>
 				<div class="issueGroup__identity">{$issueSeries}</div>
+				{if $tocGroup.editor}
+					<div class="issueGroup__editor">{translate key="plugins.themes.criticalTimes.issue.groupEditor" editor=$tocGroup.editor|strip_unsafe_html}</div>
+				{/if}
 				<div class="issueGroup__description">{$issue->getLocalizedDescription()}</div>
 				{if $issueGalleys}
 					<div class="issueGroup__galleys">
@@ -44,6 +47,9 @@
 					<div class="issueGroup__section">{translate key="plugins.themes.criticalTimes.issue.specialSection"}</div>
 				{/if}
 				<div class="issueGroup__title">{$tocGroup.name}</div>
+				{if $tocGroup.editor}
+					<div class="issueGroup__editor">{translate key="plugins.themes.criticalTimes.issue.groupEditor" editor=$tocGroup.editor|strip_unsafe_html}</div>
+				{/if}
 				<div class="issueGroup__description">{$tocGroup.description}</div>
 			{/if}
 		</div>

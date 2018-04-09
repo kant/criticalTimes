@@ -214,6 +214,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 					'description' => $issue->getData('group' . $i . 'Description'),
 					'articles' => $articles,
 					'isSpecial' => $issue->getData('group' . $i . 'IsSpecial'),
+					'editor' => $issue->getData('group' . $i . 'Editor'),
 				);
 			}
 		}
@@ -270,26 +271,32 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		$fields =& $args[1];
 		$fields[] = 'group1Items';
 		$fields[] = 'group1IsSpecial';
+		$fields[] = 'group1Editor';
 		$fields[] = 'group2Name';
 		$fields[] = 'group2Description';
 		$fields[] = 'group2Items';
 		$fields[] = 'group2IsSpecial';
+		$fields[] = 'group2Editor';
 		$fields[] = 'group3Name';
 		$fields[] = 'group3Description';
 		$fields[] = 'group3Items';
 		$fields[] = 'group3IsSpecial';
+		$fields[] = 'group3Editor';
 		$fields[] = 'group4Name';
 		$fields[] = 'group4Description';
 		$fields[] = 'group4Items';
 		$fields[] = 'group4IsSpecial';
+		$fields[] = 'group4Editor';
 		$fields[] = 'group5Name';
 		$fields[] = 'group5Description';
 		$fields[] = 'group5Items';
 		$fields[] = 'group5IsSpecial';
+		$fields[] = 'group5Editor';
 		$fields[] = 'group6Name';
 		$fields[] = 'group6Description';
 		$fields[] = 'group6Items';
 		$fields[] = 'group6IsSpecial';
+		$fields[] = 'group6Editor';
 	}
 
 	/**

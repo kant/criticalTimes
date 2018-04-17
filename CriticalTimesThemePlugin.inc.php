@@ -110,6 +110,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		$templateMgr->assign('ctSections', $browseableSections);
 
 		$templateMgr->assign('ctThemePath', $request->getBaseUrl() . '/' . $this->getPluginPath());
+		$templateMgr->assign('ctThemePlugin', $this);
 
 		if ($template === 'frontend/pages/article.tpl') {
 			$this->loadArticleTemplateData($hookName, $args);
@@ -257,6 +258,45 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 			'spotlightIssue' => $spotlightIssue,
 		));
 	}
+
+	/**
+	 * A replacement for Submission::getAuthorString()
+	 *
+	 * Returns the list of authors with the role after each author (when the role
+	 * should be shown)
+	 *
+	 * @param $article Article
+	 */
+	public function getAuthorString($article) {
+		$request = Application::getRequest();
+		$context = $request->getContext();
+		$contextId = $context ? $context->getId() : CONTEXT_ID_NONE;
+
+		$userGroupDao = DAORegistry::getDAO('UserGroupDAO');
+		$userGroups = $userGroupDao->getByContextId($contextId)->toArray();
+
+		$authors = $article->getAuthors(true);
+
+		$authorList = array();
+		foreach ($authors as $author) {
+			$authorString = $author->getFullName();
+
+			$authorUserGroup = null;
+			foreach ($userGroups as $userGroup) {
+				if ($userGroup->getId() === $author->getUserGroupId()) {
+					if ($userGroup->getShowTitle()) {
+						$authorString .= ' (' . $userGroup->getLocalizedName() . ')';
+					}
+					break;
+				}
+			}
+
+			$authorList[] = $authorString;
+		}
+
+		return join(', ', $authorList);
+	}
+
 
 	/**
 	 * Add the additional sttings fields to the issue dao

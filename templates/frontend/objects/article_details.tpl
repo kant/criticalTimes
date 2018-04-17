@@ -27,6 +27,7 @@
  * @uses $authorString string Comma-separated list of author names
  * @uses $specialSection array Details about a special section that this article
  *   was published in, if available.
+ * @uses $ctThemePlugin ThemePlugin This theme plugin object
  *}
 <article class="articleFull">
 	<div class="articleFull__header">
@@ -45,11 +46,9 @@
 			{/if}
 		</h1>
 
-		{if $article->getAuthorString()}
-			<div class="articleFull__authors">
-				{$article->getAuthorString()|strip_unsafe_html}
-			</div>
-		{/if}
+		<div class="articleFull__authors">
+			{$ctThemePlugin->getAuthorString($article)|strip_unsafe_html}
+		</div>
 	</div>
 
 	<div class="articleFull__body -clearFix">

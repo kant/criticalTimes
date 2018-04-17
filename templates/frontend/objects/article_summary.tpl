@@ -33,7 +33,7 @@
 			<div class="articleSummary__section">{$article->getSectionTitle()}</div>
 		{/if}
 		<div class="articleSummary__title">{$article->getLocalizedTitle()|strip_unsafe_html}</div>
-		<div class="articleSummary__authors">{$article->getAuthorString()|strip_unsafe_html}</div>
+		<div class="articleSummary__authors">{$ctThemePlugin->getAuthorString($article)|strip_unsafe_html}</div>
 	</a>
 	{call_hook name="Templates::Issue::Issue::Article"}
 </div>

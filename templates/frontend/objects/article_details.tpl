@@ -175,6 +175,9 @@
 		<div class="col--left">
 			<div class="issueGroup__section">{translate key="plugins.themes.criticalTimes.article.specialSection"}</div>
 			<div class="issueGroup__title">{$specialSection.name}</div>
+			{if $specialSection.editor}
+				<div class="issueGroup__editor">{translate key="plugins.themes.criticalTimes.issue.groupEditor" editor=$specialSection.editor|strip_unsafe_html}</div>
+			{/if}
 			<div class="issueGroup__description">
 				{$specialSection.description}
 				<p>

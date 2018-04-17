@@ -165,6 +165,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 				$specialSection = array(
 					'name' => $issue->getData('group' . $i . 'Name'),
 					'description' => $issue->getData('group' . $i . 'Description'),
+					'editor' => $issue->getData('group' . $i . 'Editor'),
 					'articles' => $groupArticles,
 				);
 			}

@@ -24,6 +24,7 @@
 	<!-- Issue details -->
 	<message key="plugins.themes.criticalTimes.issue.specialSection">Special Section</message>
 	<message key="plugins.themes.criticalTimes.issue.groupEditor">Edited by {$editor}</message>
+	<message key="plugins.themes.criticalTimes.issue.identification">Vol. {$vol}, No. {$num} ({$year})</message>
 
 	<!-- Article details -->
 	<message key="plugins.themes.criticalTimes.article.galleys">View</message>

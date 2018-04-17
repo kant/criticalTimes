@@ -298,6 +298,22 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 		return join(', ', $authorList);
 	}
 
+	/**
+	 * A replacement for Issue::getIssueIdentification()
+	 *
+	 * Returns a custom format for the issue identification (vol, no, title)
+	 *
+	 * @param $issue Issue
+	 */
+	public function getIssueIdentification($issue) {
+		return __('plugins.themes.criticalTimes.issue.identification', array(
+			'vol' => $issue->getData('volume'),
+			'num' => $issue->getData('number'),
+			'year' => $issue->getData('year'),
+			'title' => $issue->getLocalizedTitle(),
+		));
+	}
+
 
 	/**
 	 * Add the additional sttings fields to the issue dao

@@ -121,7 +121,7 @@
 				</h2>
 				<div class="articleFull__itemContent">
 					<a class="articleFull__issue" href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
-						{$issue->getIssueIdentification()}
+						{$ctThemePlugin->getIssueIdentification($issue)|strip_unsafe_html}
 					</a>
 				</div>
 			</div>

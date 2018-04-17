@@ -28,7 +28,7 @@
 					<div class="issueGroup__section">{translate key="journal.currentIssue"}</div>
 				{/if}
 				<div class="issueGroup__title">{$issueTitle}</div>
-				<div class="issueGroup__identity">{$issueSeries}</div>
+				<div class="issueGroup__identity">{$ctThemePlugin->getIssueIdentification($issue)|strip_unsafe_html}</div>
 				{if $tocGroup.editor}
 					<div class="issueGroup__editor">{translate key="plugins.themes.criticalTimes.issue.groupEditor" editor=$tocGroup.editor|strip_unsafe_html}</div>
 				{/if}

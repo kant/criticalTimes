@@ -12,9 +12,9 @@
  * @uses $sectionDescription string
  * @uses $articles array List of Submission objects
  * @uses $issues array List of Issue objects the $articles are published in
- * @uses $currentlyShowingStart int 20 in `20-30 of 100 results`
- * @uses $currentlyShowingEnd int 30 in `20-30 of 100 results`
- * @uses $countMax int 100 in `20-30 of 100 results`
+ * @uses $showingStart int 20 in `20-30 of 100 results`
+ * @uses $showingEnd int 30 in `20-30 of 100 results`
+ * @uses $total int 100 in `20-30 of 100 results`
  * @uses $currentlyShowingPage int 2 in `2 of 10 pages`
  * @uses $countMaxPage int 10 in `2 of 10 pages`.
  *}
@@ -44,7 +44,7 @@
 						{if $issue->getId() == $article->getIssueId()}
 							<a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">
 								<h2 class="sectionArchive__issueTitle">{$issue->getLocalizedTitle()}</h2>
-								<div class="sectionArchive__issueId">{$issue->getIssueSeries()}</div>
+								<div class="sectionArchive__issueId">{$ctThemePlugin->getIssueIdentification($issue)|strip_unsafe_html}</div>
 							</a>
 						{/if}
 					{/foreach}
@@ -69,7 +69,7 @@
 	<div class="col--right">
 		<div class="pagination">
 			<span class="pagination__current">
-				{translate key="plugins.themes.criticalTimes.section.showing" start=$currentlyShowingStart end=$currentlyShowingEnd total=$countMax}
+				{translate key="plugins.themes.criticalTimes.section.showing" start=$showingStart end=$showingEnd total=$total}
 			</span>
 			{if $urlPrevPage}
 				<a class="pagination__prev" href="{$urlPrevPage|escape}">

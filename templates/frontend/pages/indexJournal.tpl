@@ -32,7 +32,7 @@
 				{if $spotlightIssue}
 					<div class="spotlight__issue">
 						From
-						<a href="{url page="issue" op="view" path=$spotlightIssue->getBestIssueId()}">{$spotlightIssue->getIssueIdentification()}</a>
+						<a href="{url page="issue" op="view" path=$spotlightIssue->getBestIssueId()}">{$ctThemePlugin->getIssueIdentification($spotlightIssue)|strip_unsafe_html}</a>
 					</div>
 				{/if}
 			</div>

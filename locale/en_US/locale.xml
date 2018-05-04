@@ -31,6 +31,9 @@
 	<message key="plugins.themes.criticalTimes.article.galleys.supplementary">Supplementary Files</message>
 	<message key="plugins.themes.criticalTimes.article.specialSection">Published in a Special Section</message>
 	<message key="plugins.themes.criticalTimes.article.fullIssue">Read the {$link}full issue{$linkEnd}.</message>
+	<message key="plugins.themes.criticalTimes.article.translatedBy">Translated by {$translators}</message>
+	<message key="plugins.themes.criticalTimes.article.translatorGroup">Translator Role</message>
+	<message key="plugins.themes.criticalTimes.article.translatorGroup.description">Select the user group which represents translators.</message>
 
 	<!-- TOC Configuration -->
 	<message key="plugins.themes.criticalTimes.toc.group">Group {$number}</message>

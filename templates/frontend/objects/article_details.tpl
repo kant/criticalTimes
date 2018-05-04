@@ -29,6 +29,9 @@
  *   was published in, if available.
  * @uses $ctThemePlugin ThemePlugin This theme plugin object
  *}
+{assign var="authors" value=$article->getAuthors()}
+{assign var="authorString" value=$ctThemePlugin->getAuthorString($authors)}
+{assign var="translatorString" value=$ctThemePlugin->getTranslatorString($authors)}
 <article class="articleFull">
 	<div class="articleFull__header">
 		<div class="articleFull__section">
@@ -47,8 +50,14 @@
 		</h1>
 
 		<div class="articleFull__authors">
-			{$ctThemePlugin->getAuthorString($article)|strip_unsafe_html}
+			{$authorString|strip_unsafe_html}
 		</div>
+		{if $translatorString}
+			<div class="articleFull__translators">
+				{$translatorString|strip_unsafe_html}
+			</div>
+		{/if}
+
 	</div>
 
 	<div class="articleFull__body -clearFix">

@@ -27,7 +27,8 @@
 
 .articleSummary__section,
 .articleSummary__title,
-.articleSummary__authors {
+.articleSummary__authors,
+.articleSummary__translators {
 	color: @text;
 }
 
@@ -41,8 +42,14 @@
 	line-height: 1.5em;
 }
 
-.articleSummary__authors {
+.articleSummary__authors,
+.articleSummary__translators {
 	font-weight: @normal;
+}
+
+.articleSummary__translators {
+	margin-top: 0.25em;
+	font-size: 0.9rem;
 }
 
 .articleSummary--withCover {
@@ -84,6 +91,10 @@
 	.articleSummary__authors {
 		font-size: 1.2rem;
 		font-weight: @normal;
+	}
+
+	.articleSummary__translators {
+		font-size: 1rem;
 	}
 }
 

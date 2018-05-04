@@ -33,6 +33,21 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 			'description' => 'plugins.themes.criticalTimes.spotlight.intro.description'
 		));
 
+		$context = Application::getRequest()->getContext();
+		if ($context) {
+			$userGroupDao = DAORegistry::getDAO('UserGroupDAO');
+			$userGroupsResult = $userGroupDao->getByRoleId($context->getId(), ROLE_ID_AUTHOR);
+			$options = array();
+			while ($userGroup = $userGroupsResult->next())  {
+				$options[$userGroup->getId()] = $userGroup->getLocalizedName();
+			}
+			$this->addOption('translatorUserGroupId', 'radio', array(
+				'label' => 'plugins.themes.criticalTimes.article.translatorGroup',
+				'description' => 'plugins.themes.criticalTimes.article.translatorGroup.description',
+				'options' => $options,
+			));
+		}
+
 		$this->addStyle(
 			'fontSourceSerifPro',
 			'//fonts.googleapis.com/css?family=Source+Serif+Pro:400,700',
@@ -261,41 +276,61 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 	}
 
 	/**
-	 * A replacement for Submission::getAuthorString()
+	 * Get a list of authors that excludes translators. Returns an empty string if
+	 * no non-translator authors exist.
 	 *
-	 * Returns the list of authors with the role after each author (when the role
-	 * should be shown)
-	 *
-	 * @param $article Article
+	 * @param $authors Array
+	 * @return string
 	 */
-	public function getAuthorString($article) {
-		$request = Application::getRequest();
-		$context = $request->getContext();
-		$contextId = $context ? $context->getId() : CONTEXT_ID_NONE;
+	public function getAuthorString($authors) {
+		$translatorUserGroupId = $this->getOption('translatorUserGroupId');
 
-		$userGroupDao = DAORegistry::getDAO('UserGroupDAO');
-		$userGroups = $userGroupDao->getByContextId($contextId)->toArray();
-
-		$authors = $article->getAuthors(true);
-
-		$authorList = array();
-		foreach ($authors as $author) {
-			$authorString = $author->getFullName();
-
-			$authorUserGroup = null;
-			foreach ($userGroups as $userGroup) {
-				if ($userGroup->getId() === $author->getUserGroupId()) {
-					if ($userGroup->getShowTitle()) {
-						$authorString .= ' (' . $userGroup->getLocalizedName() . ')';
-					}
-					break;
-				}
-			}
-
-			$authorList[] = $authorString;
+		if (empty($authors)) {
+			return '';
 		}
 
-		return join(', ', $authorList);
+		$authorNames = array();
+		foreach ($authors as $author) {
+			if ($author->getUserGroupId() != $translatorUserGroupId) {
+				$authorNames[] = $author->getFullName();
+			}
+		}
+
+		if (empty($authorNames)) {
+			return '';
+		}
+
+		return join(__('common.listSeparator'), $authorNames);
+	}
+
+	/**
+	 * Get a list of translators to be displayed alongside authors. Returns an
+	 * empty string if no translators exist
+	 *
+	 * @param $authors Array
+	 * @return string
+	 */
+	public function getTranslatorString($authors) {
+		$translatorUserGroupId = $this->getOption('translatorUserGroupId');
+
+		if (!$translatorUserGroupId || empty($authors)) {
+			return '';
+		}
+
+		$translators = array();
+		foreach ($authors as $author) {
+			if ($author->getUserGroupId() == $translatorUserGroupId) {
+				$translators[] = $author->getFullName();
+			}
+		}
+
+		if (empty($translators)) {
+			return '';
+		}
+
+		$translatorsString = join(__('common.listSeparator'), $translators);
+
+		return __('plugins.themes.criticalTimes.article.translatedBy', array('translators' => $translatorsString));
 	}
 
 	/**

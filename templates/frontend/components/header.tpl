@@ -9,15 +9,13 @@
  *}
 <!DOCTYPE html>
 <html lang="{$currentLocale|replace:"_":"-"}" xml:lang="{$currentLocale|replace:"_":"-"}">
-{if !$pageTitleTranslated}{translate|assign:"pageTitleTranslated" key=$pageTitle}{/if}
+{if !$pageTitleTranslated}{capture assign="pageTitleTranslated"}{translate key=$pageTitle}{/capture}{/if}
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>
 		{if $pageTitleTranslated}
 			{$pageTitleTranslated|strip_tags}
-		{else}
-			{translate|assign:"pageTitleTranslated" key=$pageTitle}
 		{/if}
 		{* Add the journal name to the end of page titles *}
 		{if $requestedPage|escape|default:"index" != 'index' && $currentContext && $currentContext->getLocalizedName()}
@@ -40,9 +38,8 @@
 		{* Header *}
 		<header class="siteHeader" role="banner">
 			<div class="siteHeader__topBar">
-				{url|assign:"homeUrl" page="index" router=$smarty.const.ROUTE_PAGE}
 				<div class="siteHeader__logo">
-					<a href="{$homeUrl}">
+					<a href="{url page="index" router=$smarty.const.ROUTE_PAGE}">
 						<img src="{$ctThemePath|concat:"/img/logo.png"}" alt="{translate|escape key="plugins.themes.criticalTimes.logoAltText"}">
 					</a>
 				</div>

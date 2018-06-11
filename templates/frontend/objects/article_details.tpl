@@ -190,7 +190,7 @@
 			<div class="issueGroup__description">
 				{$specialSection.description}
 				<p>
-					{url|assign:'issueUrl' page="issue" op="view" path=$issue->getBestIssueId()}
+					{capture assign='issueUrl'}{url page="issue" op="view" path=$issue->getBestIssueId()}{/capture}
 					{translate key="plugins.themes.criticalTimes.article.fullIssue" link="<a href=\""|concat:$issueUrl|concat:'">' linkEnd="</a>"}
 				</p>
 			</div>

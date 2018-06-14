@@ -300,7 +300,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 			return '';
 		}
 
-		return join(__('common.listSeparator'), $authorNames);
+		return join(__('common.commaListSeparator'), $authorNames);
 	}
 
 	/**
@@ -328,7 +328,7 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 			return '';
 		}
 
-		$translatorsString = join(__('common.listSeparator'), $translators);
+		$translatorsString = join(__('common.commaListSeparator'), $translators);
 
 		return __('plugins.themes.criticalTimes.article.translatedBy', array('translators' => $translatorsString));
 	}

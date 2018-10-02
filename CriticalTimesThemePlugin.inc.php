@@ -24,26 +24,27 @@ class CriticalTimesThemePlugin extends ThemePlugin {
 	 */
 	public function init() {
 
-		$this->addOption('spotlightItem', 'text', array(
-			'label' => 'plugins.themes.criticalTimes.spotlight.item'
+		$this->addOption('spotlightItem', 'FieldText', array(
+			'label' => __('plugins.themes.criticalTimes.spotlight.item')
 		));
 
-		$this->addOption('spotlightIntro', 'text', array(
-			'label' => 'plugins.themes.criticalTimes.spotlight.intro',
-			'description' => 'plugins.themes.criticalTimes.spotlight.intro.description'
+		$this->addOption('spotlightIntro', 'FieldText', array(
+			'label' => __('plugins.themes.criticalTimes.spotlight.intro'),
+			'description' => __('plugins.themes.criticalTimes.spotlight.intro.description')
 		));
 
 		$context = Application::getRequest()->getContext();
 		if ($context) {
 			$userGroupDao = DAORegistry::getDAO('UserGroupDAO');
 			$userGroupsResult = $userGroupDao->getByRoleId($context->getId(), ROLE_ID_AUTHOR);
-			$options = array();
+			$options = [];
 			while ($userGroup = $userGroupsResult->next())  {
-				$options[$userGroup->getId()] = $userGroup->getLocalizedName();
+				$options[] = ['value' => $userGroup->getId(), 'label' => $userGroup->getLocalizedName()];
 			}
-			$this->addOption('translatorUserGroupId', 'radio', array(
-				'label' => 'plugins.themes.criticalTimes.article.translatorGroup',
-				'description' => 'plugins.themes.criticalTimes.article.translatorGroup.description',
+			$this->addOption('translatorUserGroupId', 'FieldOptions', array(
+				'label' => __('plugins.themes.criticalTimes.article.translatorGroup'),
+				'description' => __('plugins.themes.criticalTimes.article.translatorGroup.description'),
+				'type' => 'radio',
 				'options' => $options,
 			));
 		}

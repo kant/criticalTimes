@@ -54,4 +54,7 @@
 	<message key="plugins.themes.criticalTimes.section.prev">Previous</message>
 	<message key="plugins.themes.criticalTimes.section.next">Next</message>
 	<message key="plugins.themes.criticalTimes.section.showing">{$start}-{$end} of {$total}</message>
+
+	<!-- Masthead -->
+	<message key="plugins.themes.criticalTimes.masthead">Masthead</message.
 </locale>

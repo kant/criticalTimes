@@ -13,6 +13,7 @@
 			<div class="siteFooter">
 				<div class="siteFooter__main -clearFix">
 					<div class="siteFooter__contactColumn">
+						{capture assign="homeUrl"}{url page="index" router=$smarty.const.ROUTE_PAGE}{/capture}
 						<a class="siteFooter__siteLogo" href="{$homeUrl}">
 							<img src="{$ctThemePath|concat:"/img/logo-white.png"}" alt="{translate|escape key="plugins.themes.criticalTimes.logoAltText"}">
 						</a>

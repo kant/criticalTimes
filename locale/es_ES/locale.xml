@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * plugins/themes/criticalTimes/locale/es_ES/locale.xml
+  *
+  * Copyright (c) 2014-2017 Simon Fraser University Library
+  * Copyright (c) 2003-2017 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings
+  -->
+
+<locale name="es_ES" full_name="Español (España)">
+	<message key="plugins.themes.criticalTimes.name">Critical Times</message>
+	<message key="plugins.themes.criticalTimes.description">Tema para Critical Times, una publicación de la International Consortium of Critical Theory Programs.</message>
+
+	<message key="plugins.themes.criticalTimes.logoAltText">Logo Critical Times</message>
+	<message key="plugins.themes.criticalTimes.nav.menu">Menú</message>
+	<message key="plugins.themes.criticalTimes.browseArchives.title">Navegar por Categorías</message>
+	<message key="plugins.themes.criticalTimes.browseArchives.description">Navegue todo nuestro material publicado por Categorías.</message>
+	<message key="plugins.themes.criticalTimes.footer.support">Con el apoyo de una beca de la University of California, Berkeley de la Andrew W. Mellon Foundation.</message>
+
+	<!-- Issue details -->
+	<message key="plugins.themes.criticalTimes.issue.specialSection">Sección especial</message>
+	<message key="plugins.themes.criticalTimes.issue.groupEditor">Editado por {$editor}</message>
+	<message key="plugins.themes.criticalTimes.issue.identification">Vol. {$vol}, No. {$num} ({$year})</message>
+
+	<!-- Article details -->
+	<message key="plugins.themes.criticalTimes.article.galleys">Ver</message>
+	<message key="plugins.themes.criticalTimes.article.galleys.supplementary">Archivos complementarios</message>
+	<message key="plugins.themes.criticalTimes.article.specialSection">Publicado en una Sección Especial</message>
+	<message key="plugins.themes.criticalTimes.article.fullIssue">Lea el {$link}número completo{$linkEnd}.</message>
+	<message key="plugins.themes.criticalTimes.article.translatedBy">Traducido por {$translators}</message>
+	<message key="plugins.themes.criticalTimes.article.translatorGroup">Rol del traductor</message>
+	<message key="plugins.themes.criticalTimes.article.translatorGroup.description">Seleccione el grupo de usuarios que representan a los traductores.</message>
+
+	<!-- TOC Configuration -->
+	<message key="plugins.themes.criticalTimes.toc.group">Grupo {$number}</message>
+	<message key="plugins.themes.criticalTimes.toc.group.name">Nombre</message>
+	<message key="plugins.themes.criticalTimes.toc.group.description">Descripción</message>
+	<message key="plugins.themes.criticalTimes.toc.group.special">Deben los artículos en este grupo ser identificados como una sección especial?</message>
+	<message key="plugins.themes.criticalTimes.toc.group.items">IDs del artículo</message>
+	<message key="plugins.themes.criticalTimes.toc.group.items.description">Los IDs de los artículos debe estar separados por una coma, ej. 12,35,67,43</message>
+	<message key="plugins.themes.criticalTimes.toc.group.editor">Editado por</message>
+	<message key="plugins.themes.criticalTimes.toc.group1.note">El primer grupo se mostrará junto al título y descripción del número completo.</message>
+
+	<!-- Homepage spotlight configuration -->
+	<message key="plugins.themes.criticalTimes.spotlight.item">Destacar ID de artículo</message>
+	<message key="plugins.themes.criticalTimes.spotlight.intro">Destacar Introducción</message>
+	<message key="plugins.themes.criticalTimes.spotlight.intro.description">Esta breve etiqueta aparecerá arriba del título del artículo que se está destacando.</message>
+
+	<!-- Section archives -->
+	<message key="plugins.themes.criticalTimes.section.prev">Anterior</message>
+	<message key="plugins.themes.criticalTimes.section.next">Siguiente</message>
+	<message key="plugins.themes.criticalTimes.section.showing">{$start}-{$end} de {$total}</message>
+
+	<!-- Masthead -->
+	<message key="plugins.themes.criticalTimes.masthead">Cabecera</message.
+</locale>
